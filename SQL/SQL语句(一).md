@@ -4,44 +4,36 @@ date: 2023-11-06 11:30:20
 top_image: https://raw.githubusercontent.com/Altholia/CodeNotesPicGo/main/202311052004558.jpeg
 cover: https://raw.githubusercontent.com/Altholia/CodeNotesPicGo/main/202311052004558.jpeg
 tags:
-- [概念]
-categories: 
-- [SQL教程]
+  - SQL基本概念
+  - SQL的特点
+categories:
+  - SQL教程
 ---
-
 # 本节所使用工具：
-
 - Draw.io：https://www.drawio.com
 - Xmind：https://xmind.cn/
-
 # SQL的特点
-
 1. 综合统一
-
-   1. 集<font color = "CC6600">「数据定义语言(DDL)」[^1]</font>、<font color = "CC6600">「数据操作语言(DML)」[^2]</font>和<font color = "CC6600">「数据控制语言(DCL)」[^3]</font>功能于一体
+   1. 集<font color = "CC6600">「数据定义语言(DDL)」</font>、<font color = "CC6600">「数据操作语言(DML)」</font>和<font color = "CC6600">「数据控制语言(DCL)」</font>功能于一体
+	   1. 数据定义语言(DDL)：数据定义语言（DDL）是一种数据库语言，用于定义数据库模式、结构和约束。DDL包括创建、修改和删除数据库的表、索引、视图、存储过程、触发器等对象的语言
+	   2. 数据操作语言(DML)：数据操作语言（DML）是一种用于查询和操作数据库中数据的语言。DML可以用于插入、更新、删除和检索数据库中的数据。常见的DML语句包括：SELECT、INSERT、UPDATE和DELETE
+	   3. 数据控制语言（DCL）是一种用于定义数据库用户权限和访问权限的语言。DCL用于控制用户对数据库对象的访问权限，包括授权和收回权限的语句。常见的DCL语句包括GRANT和REVOCK
    2. 可以独立完成数据库生命周期中的全部活动：定义关系模式、插入数据以及建立数据库；对数据库中的数据进行查询；数据库重构和维护；数据库安全性、完整性的控制
    3. 用户数据库投入运行后，可根据需要随时逐步修改模式，不影响数据的运行
    4. 数据操作符统一
-
 2. 高度的非过程化
-
    1. 非关系数据模型的数据操纵语言是“面向过程”的，必须指定存取路径
    2. 而SQL只要提出“做什么”，无需了解其具体的存取路径
-   3. 存取路径的选择以及SQL的操作过程由<font color = "CC6600">「数据库管理系统（Database Management System，DBMS） 」</font>自动决定
-
+   3. 存取路径的选择以及SQL的操作过程由<font color = "CC6600">「数据库管理系统（Database Management System，DBMS」</font>自动决定
 3. 面向集合的操作方式
-
    1. 非关系数据模型采用面向记录的操作方式，操作对象是一条记录
    2. SQL采用集合操作方式
       1. 操作对象、查找结果可以是元组的集合
       2. 一次插入、删除、更新操作的对象可以是元组的集合
-
 4. 以同一种语法结构提供多种使用方式
-
    1. SQL是独立的语言：能够独立地用于联机交互的使用方式
    2. SQL是嵌入式语言：SQL能够嵌入到高级语言（例如C，C++，Java）程序中，供程序员设计程序时使用
-
-5. 语言简洁，易学易用：SQL功能极强，完成核心功能只用了9个动词
+5. 语言简洁，易学易用：SQL功能极强，完成核心功能只用了9个动词，如下表所示
 
    | SQL功能  |          动词          |
    | :------: | :--------------------: |
@@ -49,15 +41,9 @@ categories:
    | 数据定义 |  CREATE，DROP，ALTER   |
    | 数据操纵 | INSERT，UPDATE，DELETE |
    | 数据控制 |     GRANT，REVOKE      |
-
-
-
 # SQL的基本概念
-
 <strong>SQL支持关系数据三级模式结构，如下图所示：</strong>
-
 ![SQL与三级模式](https://raw.githubusercontent.com/Altholia/CodeNotesPicGo/main/202311061025491.png)
-
 - 视图：
   - 视图是与应用程序进行对接的接口：
     - 假设你要从Student(<u>Sno</u>，Name，Age，Sex)中只查询Name属性，则使用Π<sub>Name</sub>(Student)，这样就会返回一个只包含Name属性的虚表
@@ -80,15 +66,8 @@ categories:
 - 存储文件：
   - 逻辑结构组成了关系数据库的内模式
   - 物理结构是任意的，对用户透明（所谓的对用户透明是指用户看不见）
-
 # 思维导图
 
 ![SQL(一)](https://raw.githubusercontent.com/Altholia/CodeNotesPicGo/main/202311061144484.png)
-
 # 参考链接：
-
 1. 数据库系统概论：https://www.bilibili.com/video/BV1W3411y7dw/?p=16
-
-[^1]: 数据定义语言（DDL）是一种数据库语言，用于定义数据库模式、结构和约束。DDL包括创建、修改和删除数据库的表、索引、视图、存储过程、触发器等对象的语言
-[^2]: 数据操作语言（DML）是一种用于查询和操作数据库中数据的语言。DML可以用于插入、更新、删除和检索数据库中的数据。常见的DML语句包括：SELECT、INSERT、UPDATE和DELETE
-[^3]: 数据控制语言（DCL）是一种用于定义数据库用户权限和访问权限的语言。DCL用于控制用户对数据库对象的访问权限，包括授权和收回权限的语句。常见的DCL语句包括GRANT和REVOCK
