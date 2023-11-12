@@ -157,7 +157,48 @@ private static void StoredProcedure(string publisher)
 - 后面的步骤就是调用那三种方法读取数据了
 
 # 事务
-<strong>be continue……</strong>
+<strong>数据库事务：是数据库管理系统执行过程中的一个逻辑单元，由一个有限的数据库操作序列组成。当事务被提交给了<font color = "CC6600">「数据库管理系统（DBMS）」</font>，则DBMS需要确保该事务中的所有操作都成功且结果被永久保存在数据库中，如果事务中有的操作没有成功完成，则事务中的所有操作都需要回滚，回到事务执行前的状态；同时，该事务对数据库或者其他事务的执行无影响，所有的事物都好像在独立的运行</strong>，则它具有以下四个特性：<font color = "CC6600">「Atomicity（原子性）」</font><font color = "CC6600">「Consistency（一致性）」</font><font color = "CC6600">「Isolation（隔离性）」</font><font color = "CC6600">「Durability（持久性）」</font>
+1. 原子性（Atomicity）：事务作为一个整体被执行，包含在其中的对数据库的操作要么全部执行，要么都不执行
+2. 一致性（Consistency）：事务应确保数据库的状态从一个一致状态转变为另一个一致状态（一致状态：数据库中的数据应满足完整性约束）。
+3. 隔离性（Isolation）：多个事务并发执行时，一个事务的执行不应该影响其他事务的执行。隔离性的隔离级别又分为以下几点：
+	- <font color = "CC6600">「读未提交（ReadUncommitted）」</font>：最低的隔离级别，允许事务看到其他事务尚未提交的更改。这可能会导致出现<font color = "CC6600">「脏读」</font>（脏读：即读到其他事务尚未提交的数据）
+	- <font color = "CC6600">「读提交（ReadCommitted）」</font>：这个级别确保一个事务只能读取已经被其他事务提交的数据。这可以有效防止出现“脏读”现象。但仍然可能会遇到其他问题，如<font color = "CC6600">「不可重复读」</font>（同一个事物中，多次读取同一个数据，结果可能不一致）和<font color = "CC6600">「幻读」</font>（同一个事务中，多次查询返回的结果集不一致，例如新的行被插入或删除）
+	- <font color = "CC6600">「可重复读（Repeatable Read）」</font>：这个级别确保在同一个事务中多次读取同一份数据时，看到的结果是一致的。这可以有效防止出现<font color = "CC6600">「脏读」</font>和<font color = "CC6600">「不可重复度」</font>，但是仍然有可能会遇到<font color = "CC6600">「幻读」</font>问题
+	- <font color = "CC6600">「串行化（Serializable）」</font>：这是最高的隔离级别，它通过对涉及的所有行所有列都通过添加<font color = "CC6600">「锁」</font>来防止并发访问。这可以非常有效的防止<font color = "CC6600">「脏读」</font><font color = "CC6600">「不可重复读」</font>和<font color = "CC6600">「幻读」</font>，但代价就是性能开销最大，因为它会限制并发性
+4. 持久性（Durability）：已被提交的事务对数据库的修改应该永久保存在数据库中
+
+## <font color = "886600">在ADO.Net中使用事务</font>
+如果想要在ADO.Net中使用事务，可以通过调用<font color = "CC6600">「SqlConnection」</font>的<font color = "CC6600">「BeginTransaction」</font>方法就可以开始事务。<font color = "BA8448">【事务总是与一个连接关联起来，不能在多个连接上创建事务】</font>，下方的代码表示了如何使用ADO.Net开始一个事务：
+```C#
+public static void TransactionSample()
+{
+	using(var connection = new SqlConnection(GetConnectionString()))
+	{
+		await connection.OpenAsyn();
+		SqlTransaction tx = connection.BeginTransaction();
+		
+		//...
+		try
+		{
+			string sql = "INSERT INTO [ProCSharp].[Books]"+
+				"([Title],[Publisher],[Isbn],[ReleaseDate])"+
+				"SELECT SCOPE IDENTITY()";
+
+			var command = new SqlCommand
+			{
+				CommandText = sql,
+				Connection = connection,
+				Transaction = tx
+			}
+		}
+	}
+}
+```
+- connection.BeginTransaction：表示开启一个事务
+- SCOPE IDENTITY：一个函数，用来返回最后插入记录的标识值或自动递增的值
+- Transaction=tx：表示这个sql语句是用来执行一个事务而不是普通的sql语句
+
+
 # 参考文献：
 - .Net开发经典名著——《C#高级编程（第11版） C#7 & .Net Core 2.0》
 - CommandBehavior枚举：[https://learn.microsoft.com/zh-cn/dotnet/api/system.data.commandbehavior?view=net-7.0]
