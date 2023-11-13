@@ -4,10 +4,11 @@ date: 2023-11-06 11:30:20
 top_image: https://raw.githubusercontent.com/Altholia/CodeNotesPicGo/main/202311052004558.jpeg
 cover: https://raw.githubusercontent.com/Altholia/CodeNotesPicGo/main/202311052004558.jpeg
 tags:
-  - SQL基本概念
-  - SQL的特点
+  - 基本概念
+  - 特点
 categories:
   - SQL教程
+  - 数据库系统概论
 ---
 # 本节所使用工具：
 - Draw.io：https://www.drawio.com
