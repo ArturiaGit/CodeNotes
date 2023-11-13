@@ -160,7 +160,7 @@ private static void StoredProcedure(string publisher)
 <strong>数据库事务：是数据库管理系统执行过程中的一个逻辑单元，由一个有限的数据库操作序列组成。当事务被提交给了<font color = "CC6600">「数据库管理系统（DBMS）」</font>，则DBMS需要确保该事务中的所有操作都成功且结果被永久保存在数据库中，如果事务中有的操作没有成功完成，则事务中的所有操作都需要回滚，回到事务执行前的状态；同时，该事务对数据库或者其他事务的执行无影响，所有的事物都好像在独立的运行</strong>，则它具有以下四个特性：<font color = "CC6600">「Atomicity（原子性）」</font><font color = "CC6600">「Consistency（一致性）」</font><font color = "CC6600">「Isolation（隔离性）」</font><font color = "CC6600">「Durability（持久性）」</font>
 1. 原子性（Atomicity）：事务作为一个整体被执行，包含在其中的对数据库的操作要么全部执行，要么都不执行
 2. 一致性（Consistency）：事务应确保数据库的状态从一个一致状态转变为另一个一致状态（一致状态：数据库中的数据应满足完整性约束）。
-3. 隔离性（Isolation）：多个事务并发执行时，一个事务的执行不应该影响其他事务的执行。隔离性的隔离级别又分为以下几点：
+3. <a id = "隔离性">隔离性（Isolation）</a>：多个事务并发执行时，一个事务的执行不应该影响其他事务的执行。隔离性的隔离级别又分为以下几点：
 	- <font color = "CC6600">「读未提交（ReadUncommitted）」</font>：最低的隔离级别，允许事务看到其他事务尚未提交的更改。这可能会导致出现<font color = "CC6600">「脏读」</font>（脏读：即读到其他事务尚未提交的数据）
 	- <font color = "CC6600">「读提交（ReadCommitted）」</font>：这个级别确保一个事务只能读取已经被其他事务提交的数据。这可以有效防止出现“脏读”现象。但仍然可能会遇到其他问题，如<font color = "CC6600">「不可重复读」</font>（同一个事物中，多次读取同一个数据，结果可能不一致）和<font color = "CC6600">「幻读」</font>（同一个事务中，多次查询返回的结果集不一致，例如新的行被插入或删除）
 	- <font color = "CC6600">「可重复读（Repeatable Read）」</font>：这个级别确保在同一个事务中多次读取同一份数据时，看到的结果是一致的。这可以有效防止出现<font color = "CC6600">「脏读」</font>和<font color = "CC6600">「不可重复度」</font>，但是仍然有可能会遇到<font color = "CC6600">「幻读」</font>问题
@@ -174,7 +174,7 @@ public static void TransactionSample()
 {
 	using(var connection = new SqlConnection(GetConnectionString()))
 	{
-		await connection.OpenAsyn();
+		connection.Open();
 		SqlTransaction tx = connection.BeginTransaction();
 		
 		//...
@@ -190,15 +190,65 @@ public static void TransactionSample()
 				Connection = connection,
 				Transaction = tx
 			}
+
+			var p1 = new SqlParameter("Title",SqlDbType.NVarChar,50);
+			var p2 = new SqlParameter("Publisher",SqlDbType.NVarChar,50);
+			var p3 = new SqlParameter("Isbn",SqlDbType.NVarChar,20);
+			var p4 = new SqlParameter("ReleaseDate",SqlDbType.Date);
+			command.Parameters.AddRange(new sqlParameter[]{p1,p2,p3,p4});
+
+			command.Parameters["Title"].Value = "……";
+			command.Parameters["Publisher"].Value = "……";
+			command.Parameters["Isbn"].Value = "42-08154711";
+			command.Parameters["ReleaseDate"].Value = "……";
+
+			int id = command.ExecuteScalar();
+			Console.WriteLine($"record added with id:{id}");
+
+			command.Parameters["Title"].Value = "…………";
+			command.Parameters["Publisher"].Value = "…………";
+			command.Parameters["Isbn"].Value = "42-08154711";
+			command.Parameters["ReleaseDate"].Value = "…………";
+
+			int id = command.ExecuteScalar();
+			Console.WriteLine($"record added with id:{id}");
+			
+			tx.Commit();
+		}
+		catch(Exception ex)
+		{
+			Console.WriteLine($"error {ex.Message},rolling back");
+			tx.Rollback();
 		}
 	}
 }
 ```
-- connection.BeginTransaction：表示开启一个事务
-- SCOPE IDENTITY：一个函数，用来返回最后插入记录的标识值或自动递增的值
-- Transaction=tx：表示这个sql语句是用来执行一个事务而不是普通的sql语句
+- connection.Open()：首先使用connection.Open()打开连接
+- connection.BeginTransaction()：利用BeginTransaction方法开始事务
+- Transaction = tx：告诉command这是在执行一个事务而不是普通的sql语句
+- p1 = new SqlParameter && command.Parameters[""]：定义和填充参数
+- tx.Commit：提交事务
+- tx.Rollback：事务提交失败，开始回滚
+在上述代码示例中，由于两次的Isbn值相同（设置了唯一性），因此该事务会执行失败而执行回滚操作。<font color = "BA8448">【需要注意的是，如果在断点调试的模式下执行事务，那么事务有可能会因为断点激活的时间太长而导致中断，因为事务超时了。】</font>
 
+## <font color = "886600">ADO.Net中的隔离级别</font>
+在ADO.Net中除了上述<a href = "#隔离性">隔离性</a>中提到的四个隔离级别以外，ADO.Net还额外提供了三种隔离级别，如下所示：
+- <font color = "CC6600">「快照隔离（Snapshot）」</font>：Snapshot用于对实际的数据进行快照。在复制修改的记录时，这个级别会减少锁定。这样，其他事务仍可以读取旧数据，而不需要等待解锁。这个隔离级别可以有效防止<font color = "CC6600">「脏读」</font><font color = "CC6600">「不可重复读」</font><font color = "CC6600">「幻读」</font>，同时不需要对读取的数据进行行锁定，从而提高并发性能
+	- 该隔离级别是Sql Server 2005引入的一个隔离级别，它通过存储数据变更的版本来工作。在快照隔离级别中，读取操作会读取到事务开始之前的旧数据。例如：如果数据a在事务T1中被修改为b，而与此同时事务T2的事务隔离级别被设置为<font color = "CC6600">「快照隔离」</font>，那么T2读取到的数据依然是a
+- <font color = "CC6600">「未指定（Unspecified）」：</font>Unspecified表示，提供程序使用另一个隔离级别值，该值不同于IsolationLevel枚举定义的值（一般不推荐）
+- <font color = "CC6600">「混乱隔离（Chaos）」：</font>Chaos类似于ReadUncommitted，与Readuncommitted不同的是，它不能锁定更新的记录
 
+下表表示了最常用的事务隔离级别可能导致的问题：
+
+| 隔离级别 | 脏读 | 不可重复读 | 幻读 |
+|:------:|:----:|:--------:|:---:|
+| ReadUncommitted| Y | Y | Y |
+| ReadCommitted | N | Y | Y |
+| RepeatableRead | N | N | Y |
+| Serializable | N | N | N |
+
+# 事务和System.Transaction
+**be conntinued……**
 # 参考文献：
 - .Net开发经典名著——《C#高级编程（第11版） C#7 & .Net Core 2.0》
 - CommandBehavior枚举：[https://learn.microsoft.com/zh-cn/dotnet/api/system.data.commandbehavior?view=net-7.0]
