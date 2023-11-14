@@ -7,8 +7,7 @@ tags:
   - 基本概念
   - 特点
 categories:
-  - SQL教程
-  - 数据库系统概论
+  - [数据库系统概论,SQL教程]
 ---
 # 本节所使用工具：
 - Draw.io：https://www.drawio.com

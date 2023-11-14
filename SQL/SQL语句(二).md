@@ -4,11 +4,10 @@ date: 2023-11-07 19:49:36
 top_image: https://raw.githubusercontent.com/Altholia/CodeNotesPicGo/main/202311052004558.jpeg
 cover: https://raw.githubusercontent.com/Altholia/CodeNotesPicGo/main/202311052004558.jpeg
 tags: 
-- 数据类型
-- 模式的定义与删除
+- 基本表
+- 模式
 categories: 
-- SQL教程
-- 数据库系统概论
+- [数据库系统概论,SQL教程]
 ---
 # 数据定义
 <strong>SQL的数据定义功能有这几个方面：<font color = "CC6600">「模式定义」</font><font color = "CC6600">「表定义」</font><font color = "CC6600">「视图」</font>以及<font color = "CC6600">「索引的定义」</font>。有关它们的操作语句，如下图所示：</strong>

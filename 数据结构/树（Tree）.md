@@ -3,8 +3,7 @@ title: 树（Tree）
 date: 2023-11-14 08:57:11
 description: 这篇文章详细介绍了树这种数据结构的基本定义和特点，包括树的结点的分类和结点间的关系。文章还通过图表形式解释了树结构的层次、深度、有序树和森林等概念，并对比了树与线性表的结构差异。
 categories: 
-  - 数据结构
-  - 树
+  - [数据结构,树]
 tags:
   - 树
 top_image: https://raw.githubusercontent.com/Altholia/CodeNotesPicGo/main/202311140920116.png
@@ -14,7 +13,7 @@ keywords:
   - 树的抽象类型
 ---
 # 树的定义
-<strong>树（Tree）是n（n>=0个结点的有限集</strong>
+<strong>树（Tree）是n（n>=0）个结点的有限集</strong>
 - n=0：被称为空树（EmptyTree）
 - 在任意一棵非空树下：
 	- 有且只有一个特定的结点被称为<font color = "CC6600">「根结点（root）」</font>
@@ -37,7 +36,7 @@ keywords:
 - 如下图所示：A结点是B结点和C结点的双亲，所以B和C是互为兄弟
 ![树.drawio.png](https://raw.githubusercontent.com/Altholia/CodeNotesPicGo/main/202311141018157.png)
 
-## <font color = "886600">树的其他概念</font>
+# 树的其他概念
 - 层次（Level）：从根开始定义，根为第一层，根的孩子为第二层
 - 堂兄弟：双亲在同一层的结点互为堂兄弟。
 - 最大深度（Depth）：树中结点最大层次被称为树的<font color = "CC6600">「深度（Depth）」</font>或高度
@@ -45,9 +44,12 @@ keywords:
 - 有序树：如果将树中的结点的各子树看成从左到右是有次序的，不能互换的，则称该树为<font color = "CC6600">「有序树」</font>，否则就是<font color = "CC6600">「无序树」</font>
 - 森林（Forest）：是m(m>=0)棵<font color = "CC6600">「互不相交」</font>的树的集合
 
-## <font color = "886600">树与线性表的结构对比</font>
+# 树与线性表的结构对比
 | 线性结构 | 树结构 |
 |:-------:|:-----|
 | 第一个数据元素：无前驱 | 根结点：无双亲，唯一 |
 | 最后一个数据元素：无后继 | 叶结点：无孩子，可以多个 |
 | 中间元素：一个前驱和一个后继 | 中间结点：一个双亲多个孩子 |
+
+# 思维导图
+![树（Tree）.png](https://raw.githubusercontent.com/Altholia/CodeNotesPicGo/main/202311141253218.png)
