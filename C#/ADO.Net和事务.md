@@ -237,7 +237,6 @@ public static void TransactionSample()
 	- 该隔离级别是Sql Server 2005引入的一个隔离级别，它通过存储数据变更的版本来工作。在快照隔离级别中，读取操作会读取到事务开始之前的旧数据。例如：如果数据a在事务T1中被修改为b，而与此同时事务T2的事务隔离级别被设置为<font color = "CC6600">「快照隔离」</font>，那么T2读取到的数据依然是a
 - <font color = "CC6600">「未指定（Unspecified）」：</font>Unspecified表示，提供程序使用另一个隔离级别值，该值不同于IsolationLevel枚举定义的值（一般不推荐）
 - <font color = "CC6600">「混乱隔离（Chaos）」：</font>Chaos类似于ReadUncommitted，与Readuncommitted不同的是，它不能锁定更新的记录
-
 下表表示了最常用的事务隔离级别可能导致的问题：
 
 | 隔离级别 | 脏读 | 不可重复读 | 幻读 |
@@ -247,8 +246,118 @@ public static void TransactionSample()
 | RepeatableRead | N | N | Y |
 | Serializable | N | N | N |
 
-# 事务和System.Transaction
-**be conntinued……**
+下面将分别介绍如何为<font color = "CC6600">「SqoConnection」</font>、<font color = "CC6600">「CommittableTransaction」</font>和<font color = "CC6600">「TransactionScope」</font>设置隔离级别：
+- SqlConnection：SqlTransaction transaction = connection.BeginTransaction(IsolationLevel.ReadCommitted);
+- CommittableTransaction：var tx = new CommittableTransaction(IsolationLevel.ReadCommitted);
+- TransactionOptions options = new TransactionOptions();
+  TransactionScope scope = new TransactionScope(TransactionScopeOption.Required,options);
+关于<font color = "CC6600">「CommittableTransaction」</font>和<font color = "CC6600">「TransactionScope」</font>的更多介绍可以看下文
+# 事务和System.Transactions
+<strong>在命名空间System.Transactions下有许多类可以供我们使用，而在其中<font color = "CC6600">「Transaction」</font>、<font color = "CC6600">「CommittableTransaction」</font>和<font color = "CC6600">「TransactionScope」</font>尤为重要</strong>
+- Transaction类：它是所有事务类型的抽象基类，它提供了控制事务和管理事务的基础设施。可以用于直接访问环境事务，提供关于事务的信息，以及在发生故障时启动回滚（<font color = "BA8448">【Transaction类不能用来直接提交事务】）</font>
+- CommittableTransaction：该类继承自Transaction，它是Transaction类的具体实现，它提供了提交事务的能力。
+- TransactionScope：TransactionScope类提供了一种简化的事务模型，它自动管理事务的生命周期，并为代码块提供了一个事务上下文环境。
+## <font color = "886600">Transaction类</font>
+<strong>Transaction类可以用于直接访问环境事务，提供关于事务的信息，以及在发生故障时启动回滚，但是它不能用来提交事务</strong>。下表描述了Transaction类的成员：
+
+| Transaction类成员 | 说明 |
+|:----------------:|:---:|
+| Current | Current是一个静态属性。如果存在环境事务，则Transaction.Current返回该事务 |
+| IsolationLevel | IsolationLevel属性返回一个IsolationLevel类型的对象。IsolationLevel是一个枚举，它定义了其他事务对某事物的临时结果的访问权限（也就是获取隔离级别） |
+| TransactionInformation | TransactionInformation属性返回TransactionInformation对象，它提供了关于事务当前状态、创建事务的时间和事务标识符的信息 |
+| Rollback | 使用Rollback方法，可以中止事务，并撤销事务的所有部分  |
+| DependentClone | 使用DependentClone方法，可以创建一个依赖当前事务的事务 |
+| TransactionCompleted | TransactionCompleted是在事务完成时触发的事件——要么成功，要么失败。使用TransactionCompletedEventHandler类型的事件处理程序对象，可以访问Transaction对象并读取其状态 |
+
+## <font color = "886600">可提交的事务（CommittableTransaction类）</font>
+<strong>我们已经知道使用Transaction类无法提交事务，而在System.Transactions命名空间下唯一支持提交事务的类是<font color = "CC6600">「CommittableTransaction」</font></strong>
+如下代码示例：
+```C#
+static async Task CommittableTransactionAsync()
+{
+	var tx = new CommittableTransaction();
+	DisplayTransactionInformation("TX create",tx.TransactionInformation);
+
+	try
+	{
+		var b = new Book
+		{
+			Title = "A Dog in The House",
+			Publisher = "Pet Show",
+			Isbn = RandomIsbn(),
+			ReleaseDate = new DateTime(2018,11,24)
+		};
+		var data = new BookData();
+		await data.AddBookAsync(b,tx);
+
+		if(AbortTx())
+			throw new ApplicationException("transaction abort by the user");
+		tx.Commit();
+	}
+	catch
+	{
+		Console.WriteLine(ex.Message);
+		Console.WriteLine();
+		tx.Rollback();
+	}
+}
+```
+- var tx = new CommittableTransaction()：用于创建CommittableTransaction对象，该对象提供了提交事务、中止事务的操作
+- tx.Commit()：用于提交事务
+- tx.rollback()：如果事务执行失败则进行回滚
+
+### <font color = "AA7700">依赖事务</font>
+<strong>对于依赖事务，可以在多个任务或线程之间影响一个事务。依赖事务依赖于另一个事务，并影响事务的结果</strong>，请看下方示例代码：
+```C#
+static void DependentTransactions()
+{
+	async Task UsingDependentTransactionAsync(DependentTransaction dtx)
+	{
+		dtx.TransactionCompleted +=(sender,e)=>DisplayTransactionInformation("Depdendent TX completed",e.Transaction.TransactionInformation);
+
+		DisplayTransactionInformation("Dependent TX",dtx.TransactionInformation);
+
+		await Task.Delay(2000);
+
+		dtx.Complete();//表示完成依赖事务
+		DisplayTransactionInformation("Dependent TX send complete",dtx.TransactionInformation);
+	}
+
+	var tx = new CommittableTransaction();
+	DisplayTransactionInformation("Root Tx created",tx.TransactionInformation);
+	
+	try
+	{
+		DependentTransaction depTx = tx.DependentClone(DependentCloneOption.BlockCommitUntilComplete);
+
+		Task t1 = Task.Run(()=>UsingDependentTransactionAsync(depTx));
+
+		if(AbortTx())
+			throw new ApplicationException("……");
+		
+		tx.Commit();
+	}
+	catch
+	{
+		Console.WriteLine(ex.Message);
+		tx.Rollback();
+	}
+
+	DisplayTransactionInformation("TX completed",tx.TransactionInformation);
+}
+```
+- 在上述代码示例中，我们首先创建了一个基于任务的异步方法，以便在后序代码中能够使用它
+- 之后我们使用CommittableTransaction创建一个根事务tx
+- 我们接着使用tx的DependentClone方法创建一个依赖事务depTx
+	- 我们在使用DependentClone方法创建依赖事务时，需要给DependentClone方法传递一个DependentCloneOption类型的参数，该参数是一个枚举，有两个值：<font color = "CC6600">「BlockCompleteUntilComplete」</font>和<font color = "CC6600">「RollbackIfNotComplete」</font>
+		- BlockCompleteUntilComplete：如果将DependentCloneOption设置为该参数，那么tx.Commit就会等待，直到所有的依赖事务都完成为止
+		- RollbackIfNotComplete：设置该参数，则如果依赖事务没有在根事务提交事务之前调用Complete方法，则事务将会被中止
+- 我们将创建好的依赖事务depTx传递给UsingDependentTransactionAsync方法。
+
+## <font color = "886600">环境事务</font>
+<strong>也就是定义一个代码块，这个代码块是事务性代码，里面包含的各种操作都被视为事务</strong>
+- 对于环境事务，我们不需要手动获取与事务的连接；这是由支持环境事务的资源自动完成的
+- 环境事务与当前线程关联。可以使用静态属性Transaction.Current获取并设置环境事务
 # 参考文献：
 - .Net开发经典名著——《C#高级编程（第11版） C#7 & .Net Core 2.0》
 - CommandBehavior枚举：[https://learn.microsoft.com/zh-cn/dotnet/api/system.data.commandbehavior?view=net-7.0]
@@ -256,3 +365,7 @@ public static void TransactionSample()
 - ExecuteNonQuer()方法：[https://learn.microsoft.com/zh-cn/dotnet/api/system.data.common.dbcommand.executenonquery?view=net-7.0]
 - SqlCommand类：[https://learn.microsoft.com/zh-cn/dotnet/api/microsoft.data.sqlclient.sqlcommand?view=sqlclient-dotnet-standard-5.1]
 - CommandType：[https://learn.microsoft.com/zh-cn/dotnet/api/system.data.commandtype?view=net-7.0]
+- System.Transactions命名空间：[https://learn.microsoft.com/zh-cn/dotnet/api/system.transactions?view=net-7.0]
+- Transaction类：[https://learn.microsoft.com/zh-cn/dotnet/api/system.transactions.transaction?view=net-7.0]
+- CommittableTransaction类：[https://learn.microsoft.com/zh-cn/dotnet/api/system.transactions.committabletransaction?view=net-7.0]
+- TransactionScope类：[https://learn.microsoft.com/zh-cn/dotnet/api/system.transactions.transactionscope?view=net-7.0]
