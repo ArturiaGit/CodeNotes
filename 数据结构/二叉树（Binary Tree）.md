@@ -7,8 +7,8 @@ categories:
     - 树
 tags:
   - 二叉树
-top_image: https://raw.githubusercontent.com/Altholia/CodeNotesPicGo/main/202311141608093.png
-cover: https://raw.githubusercontent.com/Altholia/CodeNotesPicGo/main/202311141608093.png
+top_image: https://arturia-blog-1316646580.cos.ap-shanghai.myqcloud.com/ArturiaBlogPicGo/202311172011723.png
+cover: https://arturia-blog-1316646580.cos.ap-shanghai.myqcloud.com/ArturiaBlogPicGo/202311172011723.png
 keywords:
   - 定义
   - 删除

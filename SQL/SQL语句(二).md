@@ -1,13 +1,14 @@
 ---
 title: SQL语句(二)
 date: 2023-11-07 19:49:36
-top_image: https://raw.githubusercontent.com/Altholia/CodeNotesPicGo/main/202311052004558.jpeg
-cover: https://raw.githubusercontent.com/Altholia/CodeNotesPicGo/main/202311052004558.jpeg
-tags: 
-- 基本表
-- 模式
-categories: 
-- [数据库系统概论,SQL教程]
+top_image: https://arturia-blog-1316646580.cos.ap-shanghai.myqcloud.com/ArturiaBlogPicGo/202311172016893.jpeg
+cover: https://arturia-blog-1316646580.cos.ap-shanghai.myqcloud.com/ArturiaBlogPicGo/202311172016893.jpeg
+tags:
+  - 基本表
+  - 模式
+categories:
+  - - 数据库系统概论
+    - SQL教程
 ---
 # 数据定义
 <strong>SQL的数据定义功能有这几个方面：<font color = "CC6600">「模式定义」</font><font color = "CC6600">「表定义」</font><font color = "CC6600">「视图」</font>以及<font color = "CC6600">「索引的定义」</font>。有关它们的操作语句，如下图所示：</strong>

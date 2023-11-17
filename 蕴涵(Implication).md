@@ -2,13 +2,14 @@
 title: 蕴涵(Implication)
 date: 2023-11-16 21:56:41
 description: 这篇文章简单的介绍了下什么是蕴涵关系
-categories: 
-- [科普,数学]
-top_image: https://raw.githubusercontent.com/Altholia/CodeNotesPicGo/main/202311162158185.jpg
-cover: https://raw.githubusercontent.com/Altholia/CodeNotesPicGo/main/202311162158185.jpg
-keywords: 
-- 单向蕴涵关系
-- 双向蕴涵关系
+categories:
+  - - 科普
+    - 数学
+top_image: https://arturia-blog-1316646580.cos.ap-shanghai.myqcloud.com/ArturiaBlogPicGo/202311172017143.jpg
+cover: https://arturia-blog-1316646580.cos.ap-shanghai.myqcloud.com/ArturiaBlogPicGo/202311172017143.jpg
+keywords:
+  - 单向蕴涵关系
+  - 双向蕴涵关系
 ---
 # 数据库蕴涵关系
 

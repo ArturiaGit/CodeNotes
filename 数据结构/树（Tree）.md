@@ -2,12 +2,13 @@
 title: 树（Tree）
 date: 2023-11-14 08:57:11
 description: 这篇文章详细介绍了树这种数据结构的基本定义和特点，包括树的结点的分类和结点间的关系。文章还通过图表形式解释了树结构的层次、深度、有序树和森林等概念，并对比了树与线性表的结构差异。
-categories: 
-  - [数据结构,树]
+categories:
+  - - 数据结构
+    - 树
 tags:
   - 树
-top_image: https://raw.githubusercontent.com/Altholia/CodeNotesPicGo/main/202311140920116.png
-cover: https://raw.githubusercontent.com/Altholia/CodeNotesPicGo/main/202311140920116.png
+top_image: https://arturia-blog-1316646580.cos.ap-shanghai.myqcloud.com/ArturiaBlogPicGo/202311172013031.png
+cover: https://arturia-blog-1316646580.cos.ap-shanghai.myqcloud.com/ArturiaBlogPicGo/202311172013031.png
 keywords:
   - 树的定义
   - 树的抽象类型

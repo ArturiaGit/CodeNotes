@@ -1,13 +1,14 @@
 ---
 title: SQL语句(一)
 date: 2023-11-06 11:30:20
-top_image: https://raw.githubusercontent.com/Altholia/CodeNotesPicGo/main/202311052004558.jpeg
-cover: https://raw.githubusercontent.com/Altholia/CodeNotesPicGo/main/202311052004558.jpeg
+top_image: https://arturia-blog-1316646580.cos.ap-shanghai.myqcloud.com/ArturiaBlogPicGo/202311172016893.jpeg
+cover: https://arturia-blog-1316646580.cos.ap-shanghai.myqcloud.com/ArturiaBlogPicGo/202311172016893.jpeg
 tags:
   - 基本概念
   - 特点
 categories:
-  - [数据库系统概论,SQL教程]
+  - - 数据库系统概论
+    - SQL教程
 ---
 # 本节所使用工具：
 - Draw.io：https://www.drawio.com

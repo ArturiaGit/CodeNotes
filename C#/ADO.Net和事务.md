@@ -1,14 +1,13 @@
 ---
 title: ADO.Net和事务
 date: 2023-11-07 22:14:33
-top_image: https://raw.githubusercontent.com/Altholia/CodeNotesPicGo/main/202311082024112.png
-cover: https://raw.githubusercontent.com/Altholia/CodeNotesPicGo/main/202311082023179.png
-tags:
-- [事务]
-- [存储过程]
-categories: 
-- [C#]
-- [.Net,ADO.Net]
+top_image: https://arturia-blog-1316646580.cos.ap-shanghai.myqcloud.com/ArturiaBlogPicGo/202311172015103.png
+cover: https://arturia-blog-1316646580.cos.ap-shanghai.myqcloud.com/ArturiaBlogPicGo/202311172015103.png
+tags: 
+categories:
+  - - C#
+  - - .Net
+    - ADO.Net
 ---
 # 概述
 <strong>ADO.Net属于Micorosrt.Net框架的一部分，用于在应用程序和数据库之间建立数据连接。它为数据访问提供了一组组件，这些组件使得.Net应用程序可以高效地与各种关系型数据进行交互，包括数据的查询、检、插入、更新和删除等操作</strong>
