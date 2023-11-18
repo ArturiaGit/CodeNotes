@@ -53,4 +53,4 @@ keywords:
 | 中间元素：一个前驱和一个后继 | 中间结点：一个双亲多个孩子 |
 
 # 思维导图
-![树（Tree）.png](https://raw.githubusercontent.com/Altholia/CodeNotesPicGo/main/202311141253218.png)
+![](https://arturia-blog-1316646580.cos.ap-shanghai.myqcloud.com/ArturiaBlogPicGo/202311180929096.png)

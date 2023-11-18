@@ -44,7 +44,7 @@ categories:
    | 数据控制 |     GRANT，REVOKE      |
 # SQL的基本概念
 <strong>SQL支持关系数据三级模式结构，如下图所示：</strong>
-![SQL与三级模式](https://raw.githubusercontent.com/Altholia/CodeNotesPicGo/main/202311061025491.png)
+![](https://arturia-blog-1316646580.cos.ap-shanghai.myqcloud.com/ArturiaBlogPicGo/202311180938345.png)
 - 视图：
   - 视图是与应用程序进行对接的接口：
     - 假设你要从Student(<u>Sno</u>，Name，Age，Sex)中只查询Name属性，则使用Π<sub>Name</sub>(Student)，这样就会返回一个只包含Name属性的虚表
@@ -68,7 +68,6 @@ categories:
   - 逻辑结构组成了关系数据库的内模式
   - 物理结构是任意的，对用户透明（所谓的对用户透明是指用户看不见）
 # 思维导图
-
-![SQL(一)](https://raw.githubusercontent.com/Altholia/CodeNotesPicGo/main/202311061144484.png)
+![](https://arturia-blog-1316646580.cos.ap-shanghai.myqcloud.com/ArturiaBlogPicGo/202311180939255.png)
 # 参考链接：
 1. 数据库系统概论：https://www.bilibili.com/video/BV1W3411y7dw/?p=16

@@ -35,7 +35,7 @@ keywords:
 不难发现，“蕴含式”的逻辑关系为：q是p的必要条件，p是q的充分条件。也就是说诸如“只要p就q”、“q仅当p”、“只有p才q”...等，都可以符号化为p→q的形式。
 
 3. “蕴含式”的真值表( True Table )
-![1930229-20200405234051774-1452216453.png](https://raw.githubusercontent.com/Altholia/CodeNotesPicGo/main/202311162151820.png)
+![](https://arturia-blog-1316646580.cos.ap-shanghai.myqcloud.com/ArturiaBlogPicGo/202311180940184.png)
 
 ## <font color = "886600">理解的误区</font>
 在我们平时遇到的“p→q”要么是p与q之间存在着一定的联系，要么是在前件p为真的前提下作出的判断。就比如我们在高中时学过的“命题”，它的形式是“若p，则q”，形式与“蕴含式”一模一样，但是细心的同学就会发现，我们在研究问题的时候通常将前件p视为真命题，然后再来研究后件q的真假性，从而判断“命题”真假性。所以说我们用以前高中的的思路是很难理解这个真值表（True Table）的。
