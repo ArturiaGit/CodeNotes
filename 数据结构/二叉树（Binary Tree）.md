@@ -127,8 +127,140 @@ public class BiTree<T>
 - 访问：访问其实就是根据实际的需要要来确定具体做什么，比如对每个结点进行相关计算，输出打印等，它算作是一个抽象的操作
 - 次序：二叉树的遍历不同于线性结构，线性结构最多就是从头至尾、循环、双向等简单的遍历方式。而二叉树的结点之间不存在前序和后继关系，在访问一个结点之后，下一个被访问的结点面临着不同的选择，因此对于二叉树的遍历前辈们总结出了四种遍历方式：<font color = "CC6600">「层序遍历」</font><font color = "CC6600">「前序遍历」</font><font color = "CC6600">「中序遍历」</font><font color = "CC6600">「后序遍历」</font>
 ## <font color = "886600">层序遍历</font>
-<strong>be continu……</strong> ^2ed6f7
+<strong>如果二叉树是空，则返回Null，否则从树的第一层，也就就是根结点开始访问，从上而下逐层遍历，在同一层中，按从左到右的顺序对结点逐个访问</strong>， ^2ed6f7
+层序遍历的流程图如下所示：
+![image.png](https://arturia-blog-1316646580.cos.ap-shanghai.myqcloud.com/ArturiaBlogPicGo/202311191753185.png)
+代码如下：
+```C#
+public IEnumerable<BiTreeNode<T>> GetLevelOrderTraverse()
+{
+    if (Count == 0)
+        throw new ArgumentNullException(nameof(_headNode));
+
+    BiTreeNode<T>? node = _headNode;
+
+    List<BiTreeNode<T>> result = new();
+    Queue<BiTreeNode<T>> queue = new();
+
+    result.Add(node);
+    queue.Enqueue(node.LeftChild);
+    queue.Enqueue(node.RightChild);
+
+    while (queue.Count != 0)
+    {
+        node = queue.Dequeue();
+
+        if (node is not null)
+        {
+            result.Add(node);
+            queue.Enqueue(node.LeftChild);
+            queue.Enqueue(node.RightChild);
+        }
+    }
+
+    return result;
+}
+```
+- 在层序遍历的代码中，首先获得根结点，并将它存储在结果集中
+- 之后利用[[队列(Queue)]]存储当前结点的左右结点。由于第一个结点是根结点，所以利用<font color = "CC6600">「队列」</font>可以将第二层的结点全部入队
+- 进入循环：
+	- 由于队列遵循FIFO原则，因此在第一次循环的过程中出队的是根结点的左孩子，即第二层从左往右的第一个结点。
+	- 如果出队的结点不为空则进入if语句中将该结点添加至结果集中，然后再将该结点的左右结点进行入队操作
+	- 如此循环，直至遍历完
+- 返回结果集
 ## <font color = "886600">前序遍历</font>
+<strong>如果二叉树为空则返回Null，否则先访问根结点，然后前序遍历左子树，再前序遍历右子树</strong>
+- 小白解释：因为这是前序遍历，所以我们需要先访问根结点（可以是打印根结点，也可以对根结点做其他的操作，看个人需求），然后再访问根结点的左结点，如果左结点还有左结点就接着访问左结点，直到访问到最后一个左结点为止。如果最后一个左结点既没有左结点也没有右结点就返回到上一个结点，然后访问该结点的右结点，如果右结点有左结点就依然是先访问该右结点的左结点，然后再访问右结点，依次循环。请看图：
+- ![image.png](https://arturia-blog-1316646580.cos.ap-shanghai.myqcloud.com/ArturiaBlogPicGo/202311191818313.png)
+代码如下所示：
+```C#
+public IEnumerable<T> GetPreOrderTraverse()
+{
+    if(Count == 0)
+        throw new InvalidOperationException("The binary tree is empty");
+
+    List<T> result = new();
+    BiTreeNode<T> root = _headNode;
+    PreOrderTraverse(root);
+
+    void PreOrderTraverse(BiTreeNode<T>? rootNode)
+    {
+        if (rootNode is null)
+            return;
+
+        result.Add(rootNode.Data);//核心代码
+        PreOrderTraverse(rootNode.LeftChild);//核心代码
+        PreOrderTraverse(rootNode.RightChild);//核心代码
+    }
+
+    return result;
+}
+```
+- 前序遍历通过递归来完成。首先我们将根结点传递给PreOrderTraverse方法
+	- 判断结点是否为空，如果为空则返回。否则进行下一步
+	- 将该结点的数据添加至结果集中
+	- 然后递归左结点
+	- 最后递归右结点
+- 返回结果集
 ## <font color = "886600">中序遍历</font>
+<strong>若树为空则返回NULL，否则从根结点开始（注意是开始而不是访问根结点），中序遍历根结点的左子树，然后是访问根结点，最后中序遍历右子树</strong>
+- 小白解释：中序遍历将树以根结点为基准划分成了左右两部分。
+中序遍历的流程如图所示：
+![image(1).png](https://arturia-blog-1316646580.cos.ap-shanghai.myqcloud.com/ArturiaBlogPicGo/202311192004913.png)
+代码如下：
+```C#
+public IEnumerable<T> GetInOrderTraverse()
+{
+    if(Count == 0)
+        throw new InvalidOperationException("The binary tree is empty");
+
+    List<T> result = new();
+    BiTreeNode<T> root = _headNode;
+
+    InOrderTraverse(root);
+
+    void InOrderTraverse(BiTreeNode<T>? rootNode)
+    {
+        if(rootNode is null)
+            return;
+
+        InOrderTraverse(rootNode.LeftChild);//核心代码
+        result.Add(rootNode.Data);//核心代码
+        InOrderTraverse(rootNode.RightChild);//核心代码
+    }
+
+    return result;
+}
+```
+- 中序遍历的完成也是通过递归才实现的，与<font color = "CC6600">「前序遍历」</font>基本一致，唯一的不同就是核心代码的执行顺序有所改变
 ## <font color = "886600">后序遍历</font>
+<strong>如果树为空则返回NULL，否则从左到右先叶结点后双亲结点的方式遍历访问左右子树，最后是访问根结点</strong>
+后序遍历的流程图如下所示：
+![image.png](https://arturia-blog-1316646580.cos.ap-shanghai.myqcloud.com/ArturiaBlogPicGo/202311192009607.png)
+代码如下所示：
+```C#
+public IEnumerable<T> GetPostOrderTraverse()
+{
+    if(Count == 0)
+        throw new InvalidOperationException("The binary tree is empty");
+
+    List<T> result = new();
+    BiTreeNode<T> root = _headNode;
+
+    PostOrderTraverse(root);
+
+    void PostOrderTraverse(BiTreeNode<T>? rootNode)
+    {
+        if (rootNode is null)
+            return;
+
+        PostOrderTraverse(rootNode.LeftChild);//核心代码
+        PostOrderTraverse(rootNode.RightChild);//核心代码
+        result.Add(rootNode.Data);//核心代码
+    }
+
+    return result;
+}
+```
 ## <font color = "886600">推导遍历结果</font>
+<strong>be continue……</strong>
