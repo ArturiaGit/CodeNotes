@@ -1,8 +1,8 @@
 ---
 title: SQL语句(一)
 date: 2023-11-06 11:30:20
-top_image: https://arturia-blog-1316646580.cos.ap-shanghai.myqcloud.com/ArturiaBlogPicGo/202311172016893.jpeg
-cover: https://arturia-blog-1316646580.cos.ap-shanghai.myqcloud.com/ArturiaBlogPicGo/202311172016893.jpeg
+top_image: https://arturia-blog-1316646580.cos.ap-shanghai.myqcloud.com/ArturiaBlogPicGo/202311211942765.png
+cover: https://arturia-blog-1316646580.cos.ap-shanghai.myqcloud.com/ArturiaBlogPicGo/202311211942765.png
 tags:
   - 基本概念
   - 特点

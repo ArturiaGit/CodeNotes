@@ -1,14 +1,17 @@
 ---
 title: SQL语句(二)
 date: 2023-11-07 19:49:36
-top_image: https://arturia-blog-1316646580.cos.ap-shanghai.myqcloud.com/ArturiaBlogPicGo/202311172016893.jpeg
-cover: https://arturia-blog-1316646580.cos.ap-shanghai.myqcloud.com/ArturiaBlogPicGo/202311172016893.jpeg
+top_image: https://arturia-blog-1316646580.cos.ap-shanghai.myqcloud.com/ArturiaBlogPicGo/202311211942766.png
+cover: https://arturia-blog-1316646580.cos.ap-shanghai.myqcloud.com/ArturiaBlogPicGo/202311211942766.png
+description: 这篇文章主要讲了SQL中的数据类型有哪些以及我们该如何定义模式以及删除模式
 tags:
-  - 基本表
-  - 模式
+  - 数据定义
 categories:
   - - 数据库系统概论
     - SQL教程
+keywords:
+  - 数据类型
+  - 模式的定义和删除
 ---
 # 数据定义
 <strong>SQL的数据定义功能有这几个方面：<font color = "CC6600">「模式定义」</font><font color = "CC6600">「表定义」</font><font color = "CC6600">「视图」</font>以及<font color = "CC6600">「索引的定义」</font>。有关它们的操作语句，如下图所示：</strong>
@@ -24,8 +27,8 @@ categories:
 |:-------:|:----:|
 | CHAR(n) | 长度为n的定长字符串 |
 | VARCHAR(n) | 最大长度为n的变长字符串 |
-| INT | 长整数（也可以写作INTEGER）|
-| SMALLINT | 短整数 |
+| INT | 长整数（也可以写作INTEGER，2<sup>16</sup>）|
+| SMALLINT | 短整数(2<sup>8</sup>) |
 |NUMERIC(p,d) | 定点数，由p位数字（不包括符号、小数点）组成，小数点后面有d位数字 |
 | REAL | 取决于机器精度的浮点数 |
 | Double Precision | 取决于机器精度的双精度浮点数 |
@@ -61,55 +64,6 @@ categories:
   - <font color = "CC6600">「CASCADE」</font>和<font color = "CC6600">「RESTRICT」</font>必须二选一
     - CASCADE（级联）：级联删除，删除模式的同时会把该模式下的所有数据库对象（例如TABLE、VIEW和INDEX等）全部删除
     - RESTRICT（限制）：如果该模式中定义了下属的数据库对象（如TABLE、VIEW和INDEX等），则拒绝该删除语句的执行。只有当该模式下的没有任何下属的对象时才能执行
-## <font color = "886600">基本表的定义、删除与修改</font>
-### <font color = "AA7700">基本表的定义</font>
-<strong>语句格式如下：</strong>
-- <font color = "CC6600">CREATE TABLE &lt;表名&gt; </font>
-  <font color = "CC6600">(&lt;列名&gt; &lt;数据类型&gt; [&lt;列级完整性约束条件&gt;]</font>
-  <font color = "CC6600">[,&lt;列名&gt; &lt;数据类型&gt; [&lt;列级完整性约束条件&gt;]]</font>
-  <font color = "CC6600">[,&lt;表级完整性约束条件&gt;]);</font>
-  - []：这个符号表示里面的内容可有可无
-  - CREATE TABLE：这个是关键字，表示创建一个表
-  - <表名>：这个表名也是必须要有的，是你所需创建表的名字。例如：CREATE TABLE Student
-  - ()：小括号里用于定义列名、列的数据类型（如是int、chat还是float）、列的完整性约束条件。每次定义完一列之后如果有下一列则用","分隔接着定义下一列
-  - 最后用";"结束定义
-- 例1：
-  ```sql
-  CREATE TABLE Student
-  	(Sno CHAR(9) PRIMARY KEY,
-      Sname CHAR(20) UNIQUE,
-      SSex CHAR(2),
-      Sdept CHAR(20));
-  ```
-  - 在上述示例中，我们创建了一个名为“Student"的表，其中将Sno作为该表的主键（列级完整性约束）并且设置Sname为唯一值
-  - PRIMARY KEY：表示将该列（Sno）设置为主键
-  - UNIQUE：表示该列的值不能重复
-  - CHAR(n)：表示该列的数据类型为CHAR类型，而n表示占几个字符（<font color = "CC6600">「需要注意的是，一个汉字占两个字符」</font>）
-- 例2：
-  ```sql
-  CREATE TABLE Course
-  	(Cno CHAR(4) PRIMARY KEY,
-      Cname CHAR(40),
-      Cpno CHAR(4),
-      Ccredit SMALLINT,
-      FOREIGN KEY (Cpno) REFERENCES Course(Cno));
-  ```
-  - 上述代码中的最后一行表示：将Cpno属性设置为外键，它所参照的是Course表中的Cno属性（<font color = "CC6600">「需要注意的是，外键所参照的属性A，这个属性A在自己的表中必须是主键，这样才能成功设置外键」</font>）
-  - 如果要将某列设置为外键，则需要在<font color = "CC6600">「表级完整性约束」</font>中进行定义，不能在列级完整性约束中定义
-- 例3：
-  ```sql
-  CREATE TABLE SC
-  	(Sno CHAR(9),
-      Cno CHAR(4),
-      Grade SMALLINT,
-      PRIMARY KEY(Sno,Cno),
-      FOREIGN KEY (Sno) REFERENCES Student(Sno),
-      FOREIGN KEY (Cno) REFERENCES Course(Cno));
-  ```
-  由于SC这个表是由学生的学号（Sno）、课程号（Cno）以及成绩（Grade）所组成的，而要确定某一元组需要Sno+Cno共同确定时才能唯一确定某一元组，因此Sno+Cno组成联合组建，因此这需要在<font color = "CC6600">「表级完整性约束」</font>中进行定义
-- 什么情况下才需要在<font color = "CC6600">「表级完整性约束」</font>中进行定义
-  - 当完整性约束涉及两个或多个列时
-  - 设置外键时
 
   
   
