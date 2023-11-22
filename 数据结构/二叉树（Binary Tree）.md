@@ -20,6 +20,7 @@ keywords:
   - 推导遍历结果
   - 存储结构
   - 二叉树的性质
+  - 二叉树的抽象数据类型
 ---
 # 概念
 二叉树（Binary Tree）是[[树（Tree）]]的一种。在二叉树中，它的每个结点都<font color = "CC6600">「最多只能有两个孩子」</font>。二叉树有如下三点特征：
@@ -263,4 +264,102 @@ public IEnumerable<T> GetPostOrderTraverse()
 }
 ```
 ## <font color = "886600">推导遍历结果</font>
-<strong>be continue……</strong>
+- 定义如下：
+	- <strong>已知二叉树的前序遍历和中序遍历可以唯一确定一棵二叉树</strong>
+	- <strong>已知二叉树的后序遍历和中序遍历可以唯一确定一棵二叉树</strong>
+	- <strong>已知后序遍历和前序遍历无法唯一确定一棵二叉树</strong>
+		- 因为我们无法确认该结点是右结点还是左结点
+- 推导方法：
+	1. 首先根据前（后）序遍历结果确定根结点
+		- 因为在前序遍历中，根结点总是在最前面；同样的，后序遍历的根结点总是在最后面
+	2. 我们以根结点为中心点，将中序遍历的结果分为左子树和右子树
+	3. 在前序遍历中寻找到相应的左子树和右子树
+	4. 在前（后）序遍历中，左（右）子树开头（结尾）的那个结点就是相应子树的根结点
+	5. 重复第2步
+- 例：根据前序遍历和中序遍历推导出二叉树
+	- ![image.png](https://arturia-blog-1316646580.cos.ap-shanghai.myqcloud.com/ArturiaBlogPicGo/202311220912909.png)
+- 例：根据后序遍历和中序遍历推导出一棵二叉树
+	- ![image.png](https://arturia-blog-1316646580.cos.ap-shanghai.myqcloud.com/ArturiaBlogPicGo/202311220940578.png)
+
+## <font color = "886600">二叉树的创建</font>
+- 我们已知：
+	- 根据<font color = "CC6600">「前序遍历」</font>和<font color = "CC6600">「中序遍历」</font>可以唯一确定一棵二叉树
+	- 根据<font color = "CC6600">「后序遍历」</font>和<font color = "CC6600">「中序遍历」</font>可以唯一确定一棵二叉树
+- 因此我们可以根据上述两条性质来创建二叉树
+	- 根据<font color = "CC6600">「前序遍历&&中序遍历」</font>来创建一棵二叉树
+	- 根据<font color = "CC6600">「后序遍历&&中序遍历」</font>来创建一棵二叉树
+
+前序遍历&&中序遍历：
+```C#
+    /// <summary>
+    /// 根据前序遍历结果和中序遍历结果构造二叉树
+    /// </summary>
+    /// <param name="preOrder">前序遍历结果</param>
+    /// <param name="inOrder">后序遍历结果</param>
+    /// <param name="parentNode">父节点，默认为null</param>
+    /// <returns>返回根节点</returns>
+    private static BiTreeNode<T>? BuildTreeByPreOrder(T[] preOrder, T[] inOrder,BiTreeNode<T>? parentNode = null)
+    {
+        if (preOrder.Length == 0)
+            return null;
+
+        T rootData = preOrder[0];
+        int rootIndex = Array.IndexOf(inOrder, rootData);
+
+        T[] leftSubTreeInOrder = inOrder[..rootIndex];//获取中序遍历的左子树
+        T[] rightSubTreeInOrder = inOrder[(rootIndex + 1)..];//获取中序遍历的右子树
+
+        T[] leftSubTreePreOrder = preOrder[1..(leftSubTreeInOrder.Length+1)];//获取前序遍历的左子树
+        T[] rightSubTreePreOrder = preOrder[(leftSubTreeInOrder.Length+1)..];//获取前序遍历的右子树
+
+        BiTreeNode<T> rootNode = new()
+        {
+            Data = rootData,
+            ParentNode = parentNode
+        };
+
+        rootNode.LeftChild = BuildTreeByPreOrder(leftSubTreePreOrder, leftSubTreeInOrder,rootNode);
+        rootNode.RightChild = 
+            BuildTreeByPreOrder(rightSubTreePreOrder, rightSubTreeInOrder,rootNode);
+
+        return rootNode;
+    }
+```
+
+后序遍历&&中序遍历：
+```C#
+/// <summary>
+/// 根据后序遍历结果和中序遍历结果构造二叉树
+/// </summary>
+/// <param name="postOrder">后序遍历结果</param>
+/// <param name="inOrder">中序遍历结果</param>
+/// <param name="parentNode">父节点，默认为null</param>
+/// <returns>返回根节点</returns>
+private static BiTreeNode<T>? BuildTreeByPostOrder(T[] postOrder, T[] inOrder,BiTreeNode<T>? parentNode = null)
+{
+    if (postOrder.Length == 0)
+        return null;
+
+    T rootData = postOrder[^1];
+    int rootIndex = Array.IndexOf(inOrder, rootData);
+    if(rootIndex < 0)
+        throw new InvalidOperationException("The data in the postOrder traversal result does not exist in the inOrder traversal result");
+
+    T[] leftSubTreeInOrder = inOrder[..rootIndex];//获取中序遍历的左子树
+    T[] rightSubTreeInOrder = inOrder[(rootIndex + 1)..];//获取中序遍历的右子树
+
+    T[] leftSubTreePostOrder = postOrder[..leftSubTreeInOrder.Length];//获取后序遍历的左子树
+    T[] rightSubTreePostOrder = postOrder[leftSubTreeInOrder.Length..^1];//获取后序遍历的右子树
+
+    BiTreeNode<T> rootNode = new()
+    {
+        Data = rootData,
+        ParentNode = parentNode
+    };
+
+    rootNode.LeftChild = BuildTreeByPostOrder(leftSubTreePostOrder, leftSubTreeInOrder,rootNode);
+    rootNode.RightChild = BuildTreeByPostOrder(rightSubTreePostOrder, rightSubTreeInOrder, rootNode);
+
+    return rootNode;
+}
+```
