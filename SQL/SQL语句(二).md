@@ -6,6 +6,7 @@ cover: https://arturia-blog-1316646580.cos.ap-shanghai.myqcloud.com/ArturiaBlogP
 description: 这篇文章主要讲了SQL中的数据类型有哪些以及我们该如何定义模式以及删除模式
 tags:
   - 数据定义
+  - SQL语句
 categories:
   - - 数据库系统概论
     - SQL教程

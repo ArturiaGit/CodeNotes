@@ -34,7 +34,7 @@ keywords:
 - 只有一个根结点
 - 根结点只有左子树
 - 根结点只有右子树
-- 根结点既有左子树由有右子树
+- 根结点既有左子树又有右子树
 
 # 特殊的二叉树
 二叉树具有如下三种特殊性：<font color = "CC6600">「斜树」</font><font color = "CC6600">「满二叉树」</font><font color = "CC6600">「完全二叉树」</font>
@@ -100,6 +100,7 @@ keywords:
 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:--:|
 | A | B | C | ^ | E | ^ | G | ^ | ^ | J |
+
 但是这样有一个缺点，那就是会浪费存储空间。例如我们考虑一种极端情况，如果这棵二叉树是右斜树，它只有K个结点，它却需要分配2<sup>k</sup>-1个存储单元空间，这就极大的浪费了存储空间，<font color = "BA8448">【所以我们一般只利用顺序存储结构来存储完全二叉树】</font>
 ![image.png](https://arturia-blog-1316646580.cos.ap-shanghai.myqcloud.com/ArturiaBlogPicGo/202311181749499.png)
 
@@ -112,6 +113,7 @@ keywords:
 
 | leftChild | rightChild | data |
 |:---------:|:----------:|:----:|
+
 二叉链表的结点结构定义代码如下：
 ```C#
 public class BiTree<T>
@@ -281,7 +283,7 @@ public IEnumerable<T> GetPostOrderTraverse()
 - 例：根据后序遍历和中序遍历推导出一棵二叉树
 	- ![image.png](https://arturia-blog-1316646580.cos.ap-shanghai.myqcloud.com/ArturiaBlogPicGo/202311220940578.png)
 
-## <font color = "886600">二叉树的创建</font>
+# 二叉树的创建
 - 我们已知：
 	- 根据<font color = "CC6600">「前序遍历」</font>和<font color = "CC6600">「中序遍历」</font>可以唯一确定一棵二叉树
 	- 根据<font color = "CC6600">「后序遍历」</font>和<font color = "CC6600">「中序遍历」</font>可以唯一确定一棵二叉树
@@ -289,7 +291,7 @@ public IEnumerable<T> GetPostOrderTraverse()
 	- 根据<font color = "CC6600">「前序遍历&&中序遍历」</font>来创建一棵二叉树
 	- 根据<font color = "CC6600">「后序遍历&&中序遍历」</font>来创建一棵二叉树
 
-前序遍历&&中序遍历：
+## <font color = "886600">前序遍历&&中序遍历</font>
 ```C#
     /// <summary>
     /// 根据前序遍历结果和中序遍历结果构造二叉树
@@ -326,7 +328,7 @@ public IEnumerable<T> GetPostOrderTraverse()
     }
 ```
 
-后序遍历&&中序遍历：
+## <font color = "886600">后序遍历&&中序遍历</font>
 ```C#
 /// <summary>
 /// 根据后序遍历结果和中序遍历结果构造二叉树

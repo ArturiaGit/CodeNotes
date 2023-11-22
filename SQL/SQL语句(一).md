@@ -6,6 +6,7 @@ cover: https://arturia-blog-1316646580.cos.ap-shanghai.myqcloud.com/ArturiaBlogP
 tags:
   - 基本概念
   - 特点
+  - SQL语句
 categories:
   - - 数据库系统概论
     - SQL教程

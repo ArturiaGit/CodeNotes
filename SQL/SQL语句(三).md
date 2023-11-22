@@ -7,6 +7,7 @@ categories:
     - SQL教程
 tags:
   - 基本表
+  - SQL语句
 top_image: https://arturia-blog-1316646580.cos.ap-shanghai.myqcloud.com/ArturiaBlogPicGo/202311211942767.png
 cover: https://arturia-blog-1316646580.cos.ap-shanghai.myqcloud.com/ArturiaBlogPicGo/202311211942767.png
 keywords:
