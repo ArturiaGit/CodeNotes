@@ -2,21 +2,22 @@
 title: SQL语句(四)
 date: 2023-11-22 18:33:07
 description: 这篇文章简要介绍了什么是索引，如何建立索引，建立哪种索引适合当前需求，建立索引之后又该如何管理索引以及如何删除索引
-categories: 
-- [数据库系统概论,SQL教程]
-tags: 
-- 索引
-- SQL语句
-- 数据字典
-top_image: 
-cover: 
-keywords: 
-- 索引的建立
-- 索引的删除
-- 唯一索引
-- 非唯一索引
-- 聚簇索引
-- 数据字典
+categories:
+  - - 数据库系统概论
+    - SQL教程
+tags:
+  - 索引
+  - SQL语句
+  - 数据字典
+top_image: https://arturia-blog-1316646580.cos.ap-shanghai.myqcloud.com/ArturiaBlogPicGo/202311222116741.jpg
+cover: https://arturia-blog-1316646580.cos.ap-shanghai.myqcloud.com/ArturiaBlogPicGo/202311222116741.jpg
+keywords:
+  - 索引的建立
+  - 索引的删除
+  - 唯一索引
+  - 非唯一索引
+  - 聚簇索引
+  - 数据字典
 ---
 # 索引的建立与删除
 - 索引建立的目的：加快查询速度
