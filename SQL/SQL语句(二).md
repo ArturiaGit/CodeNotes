@@ -1,5 +1,5 @@
 ---
-title: SQL语句(二)
+title: SQL语句(二)——SCHEMA
 date: 2023-11-07 19:49:36
 top_image: https://arturia-blog-1316646580.cos.ap-shanghai.myqcloud.com/ArturiaBlogPicGo/202311211942766.png
 cover: https://arturia-blog-1316646580.cos.ap-shanghai.myqcloud.com/ArturiaBlogPicGo/202311211942766.png

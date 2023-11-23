@@ -27,7 +27,7 @@ keywords:
 
 # 深入理解IEnumerable\<T>接口
 
-在处理复杂的数据结构，如二叉树时，我们经常会遇到使用`IEnumerable<T>`接口的场景。`IEnumerable<T>`是.NET中一个非常强大的接口，它定义了一个标准，用于支持对一个非泛型集合的简单迭代。本质上，`IEnumerable<T>`接口包括一个重要的方法`GetEnumerator()`，它返回一个可以迭代集合的迭代器对象。
+在处理复杂的数据结构，如[[二叉树（Binary Tree）]]时，我们经常会遇到使用`IEnumerable<T>`接口的场景。`IEnumerable<T>`是.NET中一个非常强大的接口，它定义了一个标准，用于支持对一个非泛型集合的简单迭代。本质上，`IEnumerable<T>`接口包括一个重要的方法`GetEnumerator()`，它返回一个可以迭代集合的迭代器对象。
 
 迭代器提供了一种访问集合元素的方式，使我们能够用如`foreach`循环和LINQ查询这样的结构遍历集合。`IEnumerable<T>`接口特别适合于只读和枚举操作，因为它不提供修改集合的方法。
 

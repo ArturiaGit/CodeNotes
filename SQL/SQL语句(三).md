@@ -1,5 +1,5 @@
 ---
-title: SQL语句(三)
+title: SQL语句(三)——TABLE
 date: 2023-11-21 18:47:19
 description: 该篇文章主要介绍了如何使用SQL语句对基本表进行定义、删除与修改
 categories:

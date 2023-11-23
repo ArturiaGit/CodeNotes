@@ -1,15 +1,15 @@
 ---
-title: SQL语句(五)
+title: SQL语句(五)——SELECT
 date: 2023-11-22 20:04:04
 description: 
 categories: 
 tags: 
 top_image: 
 cover: 
-keywords:
+keywords: 
 published: false
 ---
-# 数据查询
+# 数据查询（SELECT）
 - 语句格式如下：
 	- SELECT \[ALL|DISTINCT] <目标列表达式></br>\[,<目标列表达式>]……</br>FROM <表名或视图名>\[,<表名或视图名]……</br>\[WHERE <条件表达式>]</br>\[GROUP BY <列名1>\[HAVING <条件表达式>]]</br>\[ORDER BY <列名2>\[ASC|DESC]];
 - 说明：
@@ -22,6 +22,10 @@ published: false
 	- 语句中的字母不分大小写
 	- 语句中的“,;”等标点字符为英文状态下的半角符号
 	- \[]中的内容不是语句必须的内容，只是为了实现某些需求时才添加
+- <font color = "CC6600">「SELECT」</font>三段论
+	1. 首先找出我们需要查询什么，如果是学生的姓名`Sname`，则`Sname`跟在<font color = "CC6600">「SELECT」</font>后面，即`SELECT name`
+	2. 然后确定查询涉及到了哪些表，例如在这里涉及了`Student`表，那么在<font color = "CC6600">「FROM」</font>子句后面就跟上表名，即`FROM Student`
+	3. 最后根据题目中的查询要求来判断出我们的查询条件是什么，例如查询出信息系的全部学生，则完整的语句就是：`SELECT Sname FROM Student WHERE Sdept='IS';`
 
 ## <font color = "886600">单表查询</font>
 <strong>功能：对一个表的内容进行查询</strong>
@@ -68,5 +72,88 @@ published: false
 		- 输出结果如下图：
 			- ![image.png](https://arturia-blog-1316646580.cos.ap-shanghai.myqcloud.com/ArturiaBlogPicGo/202311222041394.png)
 ### <font color = "AA7700">选择表中的若干元组</font>
-<strong>be continue……</strong>
+- 消除取值重复的行：如果没有指定<font color = "CC6600">「DISTINCT」</font>关键词，则缺省为<font color = "CC6600">「ALL」</font>
+	- 例如：查询选修了课程的学生学号
+		- 语句：SELECT Sno FROM SC; => SELECT ALL Sno FROM SC;
+		- 输出结果：
+			- |    Sno    |
+			  |:---------:|
+			  | 200215121 |
+			  | 200215121 |
+			  | 200215121 |
+			  | 200215122 |
+			  | 200215122 |
+	- 例如：指定<font color = "CC6600">「DISTINCT」</font>关键词，去掉表中重复的行
+		- 语句：SELECT DISTINCT Sno FROM SC;
+		- 输出结果：
+			- |    Sno    |
+			  |:---------:|
+			  | 200215121 |
+			  | 200215122 |
+- 查询满足条件的元组
+	- <strong>查询满足条件的元组可以通过<font color = "CC6600">「WHERE」</font>子句实现，<font color = "CC6600">「WHERE」</font>子句常用的查询条件如下表所示：</strong>
+	- ![image.png](https://arturia-blog-1316646580.cos.ap-shanghai.myqcloud.com/ArturiaBlogPicGo/202311231949712.png)
+		- <>：这个与!=等价
+		- NOT：表示取反
+	- 应用：比较大小(能够确定大致的区间)
+		- 例如：查询计算机科学系全体学生的姓名
+			- 语句：SELECT Sname FROM Student</br>&emsp;&emsp;&emsp;WHERE Sdept='CS';
+		- 例如：查询所有年龄在20岁以下的学生姓名及其年龄
+			- 语句：SELECT Sname,Sage FROM Student</br>&emsp;&emsp;&emsp;WHERE Sage<20;
+		- 例如：查询考试成绩有不及格的学生的学号
+			- 语句：SELECT DISTINCT Sno FROM SC</br>&emsp;&emsp;&emsp;WHERE Grade<60; 
+			- 说明：因为一个学生可能有多门课程不及格，因此需要用到<font color = "CC6600">「DISTINCT」</font>
+	- 应用：确定范围
+		- <strong>谓词有：<font color = "CC6600">「BETWEEN……AND……」</font>和<font color = "CC6600">「NOT BETWEEN……AND……」</font></strong>
+		- 例如：查询年龄在20~23岁（包括20岁和23岁）之间的学生的姓名、系别和年龄
+			- 语句：SELECT Sname,Sdept,Sage FROM Student</br>&emsp;&emsp;&emsp;WHERE Sage BETWEEN 20 AND 23;
+		- 例如：查询年龄年龄不在20~23岁之间的学生姓名、系别和年龄
+			- 语句：SELECT Sname,Sdept,Sage FROM Student</br>&emsp;&emsp;&emsp;WHERE Sage NOT BETWEEN 20 ADD 23;
+	- 应用：确定集合
+		- <strong>谓词有：<font color = "CC6600">「IN</值表>」</font>,<font color = "CC6600">「NOT IN</值表>」</font></strong>
+		- 例如：查询信息系（IS）、数学系（MA）和计算机科学系（CS）学生的姓名和性别
+			- 语句：SELECT Sname,Ssex FROM Student</br>&emsp;&emsp;&emsp;WHERE Sdept IN('IS','MA','CS');
+		- 例如：查询既不是信息系、数学系，也不是计算机科学系学生的姓名和性别
+			- 语句：SELECT Sname,Ssex FROM Student</br>&emsp;&emsp;&emsp;WHERE Sdept NOT IN('IS','MA','CS');
+	- 应用：字符匹配
+		- 谓词有：\[NOT] LIKE '<匹配串>' \[ESCAPE '<换码字符>']
+		- 场景一：匹配串为固定字符串
+			- 例如：查询学号为200215121的学生的详细情况
+				- 语句：SELECT \* FROM Student</br>&emsp;&emsp;&emsp;WHERE Sno LIKE '200215121';
+				- 上述语句等价于：SELECT \* FROM Student</br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;WHERE Sno='200215121';
+				- 按照编程习惯，因为我们已经知道了确切的查询条件信息，因此我们更常用第二种查询语句
+		- 场景二：匹配串为含通配符的字符串
+			- 例如：查询所有姓刘学生的姓名，学号和性别
+				- 语句：SELECT Sname,Sno,Ssex FROM Student</br>&emsp;&emsp;&emsp;WHERE Sname LIKE '刘%';
+				- 说明：%表示任意长度的字符串，但是开头的字符必须是'刘'
+			- 例如：查询姓'欧阳'且全名为三个汉字的学生的姓名
+				- 语句：SELECT Sname FROM Student</br>&emsp;&emsp;&emsp;WHERE Sname LIKE '欧阳_';
+				- 说明：'\_'表示”欧阳“后面只能跟一个字符，如果需要跟两个字符则是'\_\_'（其实'\_'和'\_\_'相当于占位符）
+			- 例如：查询名字中第二个字为“阳”字的学生的姓名和学号
+				- 语句：SELECT Sname,Sno FROM Student</br>&emsp;&emsp;&emsp;WHERE Sname LIKE '\_阳%';
+			- 例如：查询所有不姓刘的学生姓名、学号和性别
+				- 语句：SELECT Sname,Sno,Ssex FROM Student</br>&emsp;&emsp;&emsp;WHERE Sname NOT LIKE '刘%';
+			- 例如：查询所有不姓刘的学生姓名、学号和性别
+				- 语句：SELECT Sname,Sno,Ssex FROM Student</br>&emsp;&emsp;&emsp;WHERE NOT LIKE '刘%';
+		- 场景三：使用换码字符将通配符转义为普通字符
+			- 例如：查询DB\_Design课程的课程号和学分
+				- 语句：SELECT Cno,Ccredit FROM Course</br>&emsp;&emsp;&emsp;WHERE Cname LIKE 'DB\_Design' ESCAPE '\\';
+				- 说明：在'DB\_Design'中，它里面包含的'\_'是我们实际需要查询的条件并不代表任意字符，因此我们需要使用<font color = "CC6600">「ESCAPE」</font>来进行转义，则`ESCAPE \`这里表示的意思就是：告诉DBMS，\\后面的字符'\_'具有实际意义，不是任意字符
+			- 例如：查询以“DB\_”开头，且倒数第三个字符为i的课程的详细信息情况
+				- 语句：SELECT \* FROM Course</br>&emsp;&emsp;&emsp;WHERE Cname LIKE 'DE\_%i\_\_' ESCAPE '\\'
+				- 说明：ESCAPE '\\'表示“\”为转义字符。因为倒数第三个字符是i，因此i前面任意长度的字符，因此使用%，，后面为两个占位符'\_\_'
+		- 场景四：涉及空值的查询
+			- <strong>谓词：<font color = "CC6600">「IS NULL」</font>或<font color = "CC6600">「IS NOT NULL」</font></strong><font color = "BA8448">【注意，IS不能用=替代】</font>
+			- 例如：某些学生选修课程后没有参加考试，所以有选课记录但是没有考试成绩。查询缺少成绩学生得学号和相应得课程号
+				- 语句：SELECT Sno,Cno FROM SC</br>&emsp;&emsp;&emsp;WHERE Grade IS NULL;
+			- 例如：查询所有有成绩得学生学号和课程号
+				- 语句：SELECT Sno,Cno FROM SC</br>&emsp;&emsp;&emsp;WHERE Grade IS NOT NULL;
+		- 场景五：多重条件查询
+			- <strong>用逻辑运算符<font color = "CC6600">「AND」</font>和<font color = "CC6600">「OR」</font>来联结多个查询条件，<font color = "CC6600">「AND」</font>的优先级高于<font color = "CC6600">「OR」</font>，可以用括号改变优先级</strong>。联结查询可以用来实现多种其他谓词：\[NOT] IN，\[NOT] BETWEEN……AND……
+			- 例如：查询计算机系年龄在20岁以下的学生姓名
+				- 语句：SELECT Sname FROM Student</br>&emsp;&emsp;&emsp;WHERE Sage<20 AND Sdept='IS';
+			- 例如：查询信息系（IS）、数学系（MA）和计算机科学系（CS）的学生的姓名和性别
+				- 语句：SELECT Sname,Ssex FROM Student</br>&emsp;&emsp;&emsp;WHERE Sdept='IS' OR Sdept='MA' OR Sdept='CS';
+		  
+		  
 
