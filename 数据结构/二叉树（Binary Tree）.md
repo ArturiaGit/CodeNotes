@@ -58,6 +58,9 @@ keywords:
 	- ![](https://arturia-blog-1316646580.cos.ap-shanghai.myqcloud.com/ArturiaBlogPicGo/202311180928889.png)
 
 # 二叉树的性质
+
+^439a99
+
 <strong>对于二叉树，它具有五种基础的性质：</strong>
 - 性质1：在二叉树的第i层<font color = "CC6600">「至多」</font>有<font color = "CC6600">「2<sup>i-1</sup>」</font>个结点（i>=1）
 	- 例如，在<font color = "CC6600">「[[二叉树（Binary Tree）#^99da65|满二叉树]]」</font>中，他的第三层，则最多有：2<sup>i-1</sup>=2<sup>3-1</sup>=4个结点![](https://arturia-blog-1316646580.cos.ap-shanghai.myqcloud.com/ArturiaBlogPicGo/202311180928704.png)

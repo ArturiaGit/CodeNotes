@@ -17,13 +17,13 @@ keywords:
   - 多次枚举
   - C#
 ---
-# 工具和环境
+# 开发环境
 - Visual Studio 2022 Preview（Enterprise）
   - 版本：17.9.0 Preview 1.0
 - ReSharper
   - 版本：2023.2.2
 - .NET
-  - 版本：.NET 8.0
+  - 版本：Microsoft.Net SDK 8.0.100(x86)
 
 # 深入理解IEnumerable\<T>接口
 

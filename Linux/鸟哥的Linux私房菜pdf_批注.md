@@ -102,3 +102,159 @@ published: false
 >%%TAGS%%
 >
 ^m2oubxn19xa
+
+
+>%%
+>```annotation-json
+>{"created":"2023-11-23T14:14:57.575Z","updated":"2023-11-23T14:14:57.575Z","document":{"title":"鸟哥的 Linux 私房菜：基础学习篇 第四版","link":[{"href":"urn:x-pdf:32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},{"href":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf"}],"documentFingerprint":"32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},"uri":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","target":[{"source":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","selector":[{"type":"TextPositionSelector","start":27934,"end":27955},{"type":"TextQuoteSelector","exact":"CPU 实际要处理的数据则完全来自于内存 ","prefix":"！ 至于数据会流进/流出内存则是 CPU 所发布的控制命令！而 ","suffix":"（不管是程序还是一般文件数据）！这是个很重要的概念喔！ 这也是为"}]}]}
+>```
+>%%
+>*%%PREFIX%%！ 至于数据会流进/流出内存则是 CPU 所发布的控制命令！而%%HIGHLIGHT%% ==CPU 实际要处理的数据则完全来自于内存== %%POSTFIX%%（不管是程序还是一般文件数据）！这是个很重要的概念喔！ 这也是为*
+>%%LINK%%[[#^7zcuyc058ca|show annotation]]
+>%%COMMENT%%
+>
+>%%TAGS%%
+>
+^7zcuyc058ca
+
+
+>%%
+>```annotation-json
+>{"created":"2023-11-23T14:16:23.011Z","updated":"2023-11-23T14:16:23.011Z","document":{"title":"鸟哥的 Linux 私房菜：基础学习篇 第四版","link":[{"href":"urn:x-pdf:32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},{"href":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf"}],"documentFingerprint":"32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},"uri":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","target":[{"source":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","selector":[{"type":"TextPositionSelector","start":28054,"end":28100},{"type":"TextQuoteSelector","exact":"所有的单元都是由 CPU 内部的控制单元来负责协调的，因此CPU 是整个电脑系统的最重要部分","prefix":"时，对于可用内存的要求都很高的原因！而由上面的图示我们也能知道，","suffix":"！ 那么目前世界上有哪些主流的 CPU 呢？是否刚刚我们谈到的硬"}]}]}
+>```
+>%%
+>*%%PREFIX%%时，对于可用内存的要求都很高的原因！而由上面的图示我们也能知道，%%HIGHLIGHT%% ==所有的单元都是由 CPU 内部的控制单元来负责协调的，因此CPU 是整个电脑系统的最重要部分== %%POSTFIX%%！ 那么目前世界上有哪些主流的 CPU 呢？是否刚刚我们谈到的硬*
+>%%LINK%%[[#^08ej987jtzc8|show annotation]]
+>%%COMMENT%%
+>
+>%%TAGS%%
+>
+^08ej987jtzc8
+
+
+>%%
+>```annotation-json
+>{"created":"2023-11-23T14:18:53.844Z","text":"- 精简指令集（RISC）：在这种CPU的设计中，微指令集较为精简，每个指令的执行时间都很短，完成的动作也很单纯，指令的执行性能较佳，但是若要完成复杂的事情，就要由多个指令来完成。\n- 复杂指令集（CISC）：与RISC不同，CISC在微指令集的每个小指令可以执行一些较低阶的硬件操作，指令数目多而且复杂，每条指令的长度并不相同。因为指令执行较为复杂所以每条指令花费的时间较长，但每条指令可以处理的工作较为丰富","updated":"2023-11-23T14:18:53.844Z","document":{"title":"鸟哥的 Linux 私房菜：基础学习篇 第四版","link":[{"href":"urn:x-pdf:32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},{"href":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf"}],"documentFingerprint":"32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},"uri":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","target":[{"source":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","selector":[{"type":"TextPositionSelector","start":28272,"end":28318},{"type":"TextQuoteSelector","exact":"两种主要 CPU 架构， 分别是：精简指令集 （RISC） 与复杂指令集 （CISC） 系统","prefix":"些指令集的设计主要又被分为两种设计理念，这就是目前世界上常见到的","suffix":"。下面我们就来谈谈这两种不同 CPU 架构的差异啰！精简指令集 "}]}]}
+>```
+>%%
+>*%%PREFIX%%些指令集的设计主要又被分为两种设计理念，这就是目前世界上常见到的%%HIGHLIGHT%% ==两种主要 CPU 架构， 分别是：精简指令集 （RISC） 与复杂指令集 （CISC） 系统== %%POSTFIX%%。下面我们就来谈谈这两种不同 CPU 架构的差异啰！精简指令集*
+>%%LINK%%[[#^bxmrgdkyqcc|show annotation]]
+>%%COMMENT%%
+>- 精简指令集（RISC）：在这种CPU的设计中，微指令集较为精简，每个指令的执行时间都很短，完成的动作也很单纯，指令的执行性能较佳，但是若要完成复杂的事情，就要由多个指令来完成。
+>- 复杂指令集（CISC）：与RISC不同，CISC在微指令集的每个小指令可以执行一些较低阶的硬件操作，指令数目多而且复杂，每条指令的长度并不相同。因为指令执行较为复杂所以每条指令花费的时间较长，但每条指令可以处理的工作较为丰富
+>%%TAGS%%
+>
+^bxmrgdkyqcc
+
+
+>%%
+>```annotation-json
+>{"created":"2023-11-23T14:29:50.334Z","text":"- 在2003年以前由Intel所开发的x86架构CPU由8位升级到16位、32位，后来AMD依此架构修改新一代的CPU为64位，为了区别两者的差异，因此64位的个人电脑CPU又被称为x86_64的架构\n- 不同的的x86架构的CPU主要区别在于微指令集的不同","updated":"2023-11-23T14:29:50.334Z","document":{"title":"鸟哥的 Linux 私房菜：基础学习篇 第四版","link":[{"href":"urn:x-pdf:32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},{"href":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf"}],"documentFingerprint":"32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},"uri":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","target":[{"source":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","selector":[{"type":"TextPositionSelector","start":29140,"end":29249},{"type":"TextQuoteSelector","exact":"个人电脑常被称为x86架构的电脑！那为何称为x86架构[8]呢？这是因为最早的那颗Intel发展出来的CPU代号称为8086，后来依此架构又开发出80286,80386...， 因此这种架构的CPU就被称为x86架构了","prefix":"于个人电脑（Personalcomputer）用途上面， 因此，","suffix":"。在2003年以前由Intel所开发的x86架构CPU由8位升级"}]}]}
+>```
+>%%
+>*%%PREFIX%%于个人电脑（Personalcomputer）用途上面， 因此，%%HIGHLIGHT%% ==个人电脑常被称为x86架构的电脑！那为何称为x86架构[8]呢？这是因为最早的那颗Intel发展出来的CPU代号称为8086，后来依此架构又开发出80286,80386...， 因此这种架构的CPU就被称为x86架构了== %%POSTFIX%%。在2003年以前由Intel所开发的x86架构CPU由8位升级*
+>%%LINK%%[[#^doicel5v6mw|show annotation]]
+>%%COMMENT%%
+>- 在2003年以前由Intel所开发的x86架构CPU由8位升级到16位、32位，后来AMD依此架构修改新一代的CPU为64位，为了区别两者的差异，因此64位的个人电脑CPU又被称为x86_64的架构
+>- 不同的的x86架构的CPU主要区别在于微指令集的不同
+>%%TAGS%%
+>
+^doicel5v6mw
+
+
+>%%
+>```annotation-json
+>{"created":"2023-11-23T14:32:23.015Z","updated":"2023-11-23T14:32:23.015Z","document":{"title":"鸟哥的 Linux 私房菜：基础学习篇 第四版","link":[{"href":"urn:x-pdf:32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},{"href":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf"}],"documentFingerprint":"32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},"uri":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","target":[{"source":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","selector":[{"type":"TextPositionSelector","start":29357,"end":29500},{"type":"TextQuoteSelector","exact":"所谓的位指的是CPU一次数据读取的最大量！64位CPU代表CPU一次可以读写64bits这么多的数据，32位CPU则是CPU一次只能读取32位的意思。 因为CPU读取数据量有限制，因此能够从内存中读写的数据也就有所限制。所以，一般32位的CPU所能读写的最大数据量，大概就是4GB左右。","prefix":"64位的个人电脑CPU又被统称为x86_64的架构喔！Tips ","suffix":"那么不同的x86架构的CPU有什么差异呢？除了CPU的整体结构（"}]}]}
+>```
+>%%
+>*%%PREFIX%%64位的个人电脑CPU又被统称为x86_64的架构喔！Tips%%HIGHLIGHT%% ==所谓的位指的是CPU一次数据读取的最大量！64位CPU代表CPU一次可以读写64bits这么多的数据，32位CPU则是CPU一次只能读取32位的意思。 因为CPU读取数据量有限制，因此能够从内存中读写的数据也就有所限制。所以，一般32位的CPU所能读写的最大数据量，大概就是4GB左右。== %%POSTFIX%%那么不同的x86架构的CPU有什么差异呢？除了CPU的整体结构（*
+>%%LINK%%[[#^niyrq3fxcp|show annotation]]
+>%%COMMENT%%
+>
+>%%TAGS%%
+>
+^niyrq3fxcp
+
+
+>%%
+>```annotation-json
+>{"created":"2023-11-23T14:37:19.647Z","updated":"2023-11-23T14:37:19.647Z","document":{"title":"鸟哥的 Linux 私房菜：基础学习篇 第四版","link":[{"href":"urn:x-pdf:32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},{"href":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf"}],"documentFingerprint":"32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},"uri":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","target":[{"source":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","selector":[{"type":"TextPositionSelector","start":29502,"end":29655},{"type":"TextQuoteSelector","exact":"不同的x86架构的CPU有什么差异呢？除了CPU的整体结构（如第二层高速缓存、每次运行可执行的指令数等）之外， 主要是在于微指令集的不同。新的x86的CPU大多含有很先进的微指令集， 这些微指令集可以加速多媒体程序的运行，也能够加强虚拟化的性能，而且某些微指令集更能够增加能源效率， 让CPU耗电量降低呢！","prefix":"一般32位的CPU所能读写的最大数据量，大概就是4GB左右。那么","suffix":"由于电费越来越高，购买电脑时，除了整体的性能之外， 节能省电的C"}]}]}
+>```
+>%%
+>*%%PREFIX%%一般32位的CPU所能读写的最大数据量，大概就是4GB左右。那么%%HIGHLIGHT%% ==不同的x86架构的CPU有什么差异呢？除了CPU的整体结构（如第二层高速缓存、每次运行可执行的指令数等）之外， 主要是在于微指令集的不同。新的x86的CPU大多含有很先进的微指令集， 这些微指令集可以加速多媒体程序的运行，也能够加强虚拟化的性能，而且某些微指令集更能够增加能源效率， 让CPU耗电量降低呢！== %%POSTFIX%%由于电费越来越高，购买电脑时，除了整体的性能之外， 节能省电的C*
+>%%LINK%%[[#^156or7318cm|show annotation]]
+>%%COMMENT%%
+>
+>%%TAGS%%
+>
+^156or7318cm
+
+
+>%%
+>```annotation-json
+>{"created":"2023-11-23T14:38:42.300Z","updated":"2023-11-23T14:38:42.300Z","document":{"title":"鸟哥的 Linux 私房菜：基础学习篇 第四版","link":[{"href":"urn:x-pdf:32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},{"href":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf"}],"documentFingerprint":"32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},"uri":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","target":[{"source":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","selector":[{"type":"TextPositionSelector","start":29698,"end":29757},{"type":"TextQuoteSelector","exact":"例题：最新的Intel/AMD的x86架构中，请查询出多媒体、虚拟化、省电功能各有哪些重要的微指令集？（仅供参考）答：","prefix":"电脑时，除了整体的性能之外， 节能省电的CPU特色也可以考虑喔！","suffix":"多媒体微指令集：MMX, SSE, SSE2, SSE3, SS"}]}]}
+>```
+>%%
+>*%%PREFIX%%电脑时，除了整体的性能之外， 节能省电的CPU特色也可以考虑喔！%%HIGHLIGHT%% ==例题：最新的Intel/AMD的x86架构中，请查询出多媒体、虚拟化、省电功能各有哪些重要的微指令集？（仅供参考）答：== %%POSTFIX%%多媒体微指令集：MMX, SSE, SSE2, SSE3, SS*
+>%%LINK%%[[#^vfz3b80ljs|show annotation]]
+>%%COMMENT%%
+>
+>%%TAGS%%
+>
+^vfz3b80ljs
+
+
+>%%
+>```annotation-json
+>{"created":"2023-11-23T14:40:58.488Z","updated":"2023-11-23T14:40:58.488Z","document":{"title":"鸟哥的 Linux 私房菜：基础学习篇 第四版","link":[{"href":"urn:x-pdf:32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},{"href":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf"}],"documentFingerprint":"32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},"uri":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","target":[{"source":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","selector":[{"type":"TextPositionSelector","start":30112,"end":30125},{"type":"TextQuoteSelector","exact":"其他单元的重要设备主要有：","prefix":"所有单元的设备链接起来， 好让 CPU 可以对这些设备下达命令。","suffix":"系统单元：如图 0.1.2 所示，系统单元包括 CPU 与内存及"}]}]}
+>```
+>%%
+>*%%PREFIX%%所有单元的设备链接起来， 好让 CPU 可以对这些设备下达命令。%%HIGHLIGHT%% ==其他单元的重要设备主要有：== %%POSTFIX%%系统单元：如图 0.1.2 所示，系统单元包括 CPU 与内存及*
+>%%LINK%%[[#^06mtu0ryzfuc|show annotation]]
+>%%COMMENT%%
+>
+>%%TAGS%%
+>
+^06mtu0ryzfuc
+
+
+>%%
+>```annotation-json
+>{"created":"2023-11-23T14:45:12.627Z","updated":"2023-11-23T14:45:12.627Z","document":{"title":"鸟哥的 Linux 私房菜：基础学习篇 第四版","link":[{"href":"urn:x-pdf:32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},{"href":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf"}],"documentFingerprint":"32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},"uri":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","target":[{"source":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","selector":[{"type":"TextPositionSelector","start":31636,"end":31665},{"type":"TextQuoteSelector","exact":"以电脑的复杂度与运算能力进行分类的话，主要可以分为这几类：","prefix":"，再来我们想要了解的是，电脑如何分类？ 电脑的分类非常多种，如果","suffix":"超级计算机（Supercomputer） 超级计算机是运行速度最"}]}]}
+>```
+>%%
+>*%%PREFIX%%，再来我们想要了解的是，电脑如何分类？ 电脑的分类非常多种，如果%%HIGHLIGHT%% ==以电脑的复杂度与运算能力进行分类的话，主要可以分为这几类：== %%POSTFIX%%超级计算机（Supercomputer） 超级计算机是运行速度最*
+>%%LINK%%[[#^lc30pg4czaq|show annotation]]
+>%%COMMENT%%
+>
+>%%TAGS%%
+>
+^lc30pg4czaq
+
+
+>%%
+>```annotation-json
+>{"created":"2023-11-23T14:50:02.921Z","updated":"2023-11-23T14:50:02.921Z","document":{"title":"鸟哥的 Linux 私房菜：基础学习篇 第四版","link":[{"href":"urn:x-pdf:32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},{"href":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf"}],"documentFingerprint":"32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},"uri":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","target":[{"source":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","selector":[{"type":"TextPositionSelector","start":32655,"end":32722},{"type":"TextQuoteSelector","exact":"每份简单的数据都会使用到 8 个 bits 的大小来记录，因此定义出 Byte 这个单位，他们的关系为：1 Byte = 8 bits","prefix":"单位我们称为 bit。 但 bit 实在太小了，所以在储存数据时","suffix":"不过同样的，Byte 还是太小了，在较大的容量情况下，使用 By"}]}]}
+>```
+>%%
+>*%%PREFIX%%单位我们称为 bit。 但 bit 实在太小了，所以在储存数据时%%HIGHLIGHT%% ==每份简单的数据都会使用到 8 个 bits 的大小来记录，因此定义出 Byte 这个单位，他们的关系为：1 Byte = 8 bits== %%POSTFIX%%不过同样的，Byte 还是太小了，在较大的容量情况下，使用 By*
+>%%LINK%%[[#^67fscoqv7gf|show annotation]]
+>%%COMMENT%%
+>
+>%%TAGS%%
+>
+^67fscoqv7gf
+
+
+>%%
+>```annotation-json
+>{"created":"2023-11-23T14:56:24.162Z","updated":"2023-11-23T14:56:24.162Z","document":{"title":"鸟哥的 Linux 私房菜：基础学习篇 第四版","link":[{"href":"urn:x-pdf:32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},{"href":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf"}],"documentFingerprint":"32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},"uri":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","target":[{"source":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","selector":[{"type":"TextPositionSelector","start":33497,"end":33541},{"type":"TextQuoteSelector","exact":"CPU的运算速度常使用 MHz 或者是 GHz 之类的单位，这个 Hz 其实就是秒分之一","prefix":"x 私房菜：基础学习篇 第四版400.1 电脑：辅助人脑的好工具","suffix":"。而在网络传输方面，由于网络使用的是 bit 为单位，因此网络常"}]}]}
+>```
+>%%
+>*%%PREFIX%%x 私房菜：基础学习篇 第四版400.1 电脑：辅助人脑的好工具%%HIGHLIGHT%% ==CPU的运算速度常使用 MHz 或者是 GHz 之类的单位，这个 Hz 其实就是秒分之一== %%POSTFIX%%。而在网络传输方面，由于网络使用的是 bit 为单位，因此网络常*
+>%%LINK%%[[#^n4ivqzisip|show annotation]]
+>%%COMMENT%%
+>
+>%%TAGS%%
+>
+^n4ivqzisip
