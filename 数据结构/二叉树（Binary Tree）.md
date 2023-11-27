@@ -1032,3 +1032,6 @@ public class BiTree<T> : IBiTree<T>
 ```
 
 源代码下载地址：<a href = "https://github.com/Altholia/DataStructure/archive/refs/heads/main.zip">download</a>
+
+# 思维导图
+![二叉树(Binary Tree).png](https://arturia-blog-1316646580.cos.ap-shanghai.myqcloud.com/ArturiaBlogPicGo/202311271007421.png)
