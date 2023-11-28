@@ -258,3 +258,92 @@ published: false
 >%%TAGS%%
 >
 ^n4ivqzisip
+
+
+>%%
+>```annotation-json
+>{"created":"2023-11-27T02:38:07.333Z","updated":"2023-11-27T02:38:07.333Z","document":{"title":"鸟哥的 Linux 私房菜：基础学习篇 第四版","link":[{"href":"urn:x-pdf:32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},{"href":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf"}],"documentFingerprint":"32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},"uri":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","target":[{"source":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","selector":[{"type":"TextPositionSelector","start":33553,"end":33615},{"type":"TextQuoteSelector","exact":"网络使用的是 bit 为单位，因此网络常使用的单位为 Mbps 是 Mbits persecond，亦即是每秒多少 Mbit","prefix":"之类的单位，这个 Hz 其实就是秒分之一。而在网络传输方面，由于","suffix":"。举例来说，大家常听到的 20M/5M 光世代传输速度，如果转成"}]}]}
+>```
+>%%
+>*%%PREFIX%%之类的单位，这个 Hz 其实就是秒分之一。而在网络传输方面，由于%%HIGHLIGHT%% ==网络使用的是 bit 为单位，因此网络常使用的单位为 Mbps 是 Mbits persecond，亦即是每秒多少 Mbit== %%POSTFIX%%。举例来说，大家常听到的 20M/5M 光世代传输速度，如果转成*
+>%%LINK%%[[#^prql82whbl|show annotation]]
+>%%COMMENT%%
+>
+>%%TAGS%%
+>
+^prql82whbl
+
+
+>%%
+>```annotation-json
+>{"created":"2023-11-27T02:42:31.518Z","text":"- 什么是光世代传输速度？\n- 答：光时代传输是指通过光纤网络实现的高速数据传输。这种传输方式使用的是光纤技术，能够支持高达几十甚至上百兆比特每秒(Mbps)甚至更高的数据传输速度\n</br>\n- 是如何计算出2.5MByte/s和625Byte/s的下载速度和上传速度的？\n- 答：20Mbps=20Mbit/s，而我们知道1Byte=8bit，所以MByte/s = Mbit/s÷8，即20Mbps÷8=2.5MByte/s。其实20Mbps和2.5MBps都是理论上的最大下载速度，只是单位不同而已","updated":"2023-11-27T02:42:31.518Z","document":{"title":"鸟哥的 Linux 私房菜：基础学习篇 第四版","link":[{"href":"urn:x-pdf:32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},{"href":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf"}],"documentFingerprint":"32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},"uri":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","target":[{"source":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","selector":[{"type":"TextPositionSelector","start":33621,"end":33704},{"type":"TextQuoteSelector","exact":"大家常听到的 20M/5M 光世代传输速度，如果转成文件大小的 Byte 时，其实理论最大传输值为：每秒 2.5MByte/ 每秒625KByte的下载/上传速度喔！","prefix":"its persecond，亦即是每秒多少 Mbit。举例来说，","suffix":"例题：假设你今天购买了500GB的硬盘一颗，但是格式化完毕后却只"}]}]}
+>```
+>%%
+>*%%PREFIX%%its persecond，亦即是每秒多少 Mbit。举例来说，%%HIGHLIGHT%% ==大家常听到的 20M/5M 光世代传输速度，如果转成文件大小的 Byte 时，其实理论最大传输值为：每秒 2.5MByte/ 每秒625KByte的下载/上传速度喔！== %%POSTFIX%%例题：假设你今天购买了500GB的硬盘一颗，但是格式化完毕后却只*
+>%%LINK%%[[#^07abyxkcbnok|show annotation]]
+>%%COMMENT%%
+>- 什么是光世代传输速度？
+>- 答：光时代传输是指通过光纤网络实现的高速数据传输。这种传输方式使用的是光纤技术，能够支持高达几十甚至上百兆比特每秒(Mbps)甚至更高的数据传输速度
+></br>
+>- 是如何计算出2.5MByte/s和625Byte/s的下载速度和上传速度的？
+>- 答：20Mbps=20Mbit/s，而我们知道1Byte=8bit，所以MByte/s = Mbit/s÷8，即20Mbps÷8=2.5MByte/s。其实20Mbps和2.5MBps都是理论上的最大下载速度，只是单位不同而已
+>%%TAGS%%
+>
+^07abyxkcbnok
+
+
+>%%
+>```annotation-json
+>{"created":"2023-11-27T02:58:59.247Z","updated":"2023-11-27T02:58:59.247Z","document":{"title":"鸟哥的 Linux 私房菜：基础学习篇 第四版","link":[{"href":"urn:x-pdf:32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},{"href":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf"}],"documentFingerprint":"32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},"uri":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","target":[{"source":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","selector":[{"type":"TextPositionSelector","start":33046,"end":33087},{"type":"TextQuoteSelector","exact":"1GBytes 的文件大小实际上为：1024x1024x1024Bytes 这么大","prefix":"00P 1000E一般来说，文件大小使用的是二进制的方式，所以 ","suffix":"！ 速度单位则常使用十进制，例如 1GHz 就是1000x100"}]}]}
+>```
+>%%
+>*%%PREFIX%%00P 1000E一般来说，文件大小使用的是二进制的方式，所以%%HIGHLIGHT%% ==1GBytes 的文件大小实际上为：1024x1024x1024Bytes 这么大== %%POSTFIX%%！ 速度单位则常使用十进制，例如 1GHz 就是1000x100*
+>%%LINK%%[[#^ss4u32j8ji|show annotation]]
+>%%COMMENT%%
+>
+>%%TAGS%%
+>
+^ss4u32j8ji
+
+
+>%%
+>```annotation-json
+>{"created":"2023-11-27T03:35:50.444Z","text":"硬盘商通常采用十进制测量硬盘的大小，即1G=1000M，所以500GB=500×1000×1000×1000个Byte。而操作系统通常采用二进制，因此1GB=1024×1024×1024Byte，因此，将它换算成操作系统的容量是：(500×1000×1000×1000)/(1024×1024×1024)=466GB左右","updated":"2023-11-27T03:35:50.444Z","document":{"title":"鸟哥的 Linux 私房菜：基础学习篇 第四版","link":[{"href":"urn:x-pdf:32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},{"href":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf"}],"documentFingerprint":"32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},"uri":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","target":[{"source":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","selector":[{"type":"TextPositionSelector","start":33779,"end":33854},{"type":"TextQuoteSelector","exact":"500GByte代表为50010001000*1000Byte之意。 转成文件的容量单位时使用二进制（1024为底），所以就成为466GB左右的容量了","prefix":"量，这是什么原因？答：因为一般硬盘制造商会使用十进制的单位，所以","suffix":"。硬盘厂商并非要骗人，只是因为硬盘的最小物理量为512Bytes"}]}]}
+>```
+>%%
+>*%%PREFIX%%量，这是什么原因？答：因为一般硬盘制造商会使用十进制的单位，所以%%HIGHLIGHT%% ==500GByte代表为50010001000*1000Byte之意。 转成文件的容量单位时使用二进制（1024为底），所以就成为466GB左右的容量了== %%POSTFIX%%。硬盘厂商并非要骗人，只是因为硬盘的最小物理量为512Bytes*
+>%%LINK%%[[#^b84czk6x1ko|show annotation]]
+>%%COMMENT%%
+>硬盘商通常采用十进制测量硬盘的大小，即1G=1000M，所以500GB=500×1000×1000×1000个Byte。而操作系统通常采用二进制，因此1GB=1024×1024×1024Byte，因此，将它换算成操作系统的容量是：(500×1000×1000×1000)/(1024×1024×1024)=466GB左右
+>%%TAGS%%
+>
+^b84czk6x1ko
+
+
+>%%
+>```annotation-json
+>{"created":"2023-11-27T03:43:50.723Z","updated":"2023-11-27T03:43:50.723Z","document":{"title":"鸟哥的 Linux 私房菜：基础学习篇 第四版","link":[{"href":"urn:x-pdf:32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},{"href":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf"}],"documentFingerprint":"32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},"uri":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","target":[{"source":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","selector":[{"type":"TextPositionSelector","start":34347,"end":34408},{"type":"TextQuoteSelector","exact":"北桥：负责链接速度较快的CPU、内存与显卡接口等元件；（2）南桥：负责连接速度较慢的设备接口， 包括硬盘、USB、网卡等等","prefix":"期的芯片组通常分为两个桥接器来控制各元件的沟通， 分别是：（1）","suffix":"。（芯片组的南北桥与三国的大小乔没有关系@_@）。不过由于北桥最"}]}]}
+>```
+>%%
+>*%%PREFIX%%期的芯片组通常分为两个桥接器来控制各元件的沟通， 分别是：（1）%%HIGHLIGHT%% ==北桥：负责链接速度较快的CPU、内存与显卡接口等元件；（2）南桥：负责连接速度较慢的设备接口， 包括硬盘、USB、网卡等等== %%POSTFIX%%。（芯片组的南北桥与三国的大小乔没有关系@_@）。不过由于北桥最*
+>%%LINK%%[[#^ofpc6q8zlgk|show annotation]]
+>%%COMMENT%%
+>
+>%%TAGS%%
+>
+^ofpc6q8zlgk
+
+
+
+>%%
+>```annotation-json
+>{"created":"2023-11-27T03:54:50.060Z","updated":"2023-11-27T03:54:50.060Z","document":{"title":"鸟哥的 Linux 私房菜：基础学习篇 第四版","link":[{"href":"urn:x-pdf:32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},{"href":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf"}],"documentFingerprint":"32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},"uri":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","target":[{"source":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","selector":[{"type":"TextPositionSelector","start":35549,"end":35589},{"type":"TextQuoteSelector","exact":"CPU的频率了！什么是频率呢？简单的说， 频率就是CPU每秒钟可以进行的工作次数","prefix":"作效率的优劣。除了这点之外， CPU性能的比较还有什么呢？那就是","suffix":"。 所以频率越高表示这颗CPU单位时间内可以作更多的事情。举例来"}]}]}
+>```
+>%%
+>*%%PREFIX%%作效率的优劣。除了这点之外， CPU性能的比较还有什么呢？那就是%%HIGHLIGHT%% ==CPU的频率了！什么是频率呢？简单的说， 频率就是CPU每秒钟可以进行的工作次数== %%POSTFIX%%。 所以频率越高表示这颗CPU单位时间内可以作更多的事情。举例来*
+>%%LINK%%[[#^4hsenzoc6cu|show annotation]]
+>%%COMMENT%%
+>
+>%%TAGS%%
+>
+^4hsenzoc6cu
