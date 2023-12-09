@@ -258,3 +258,306 @@ published: false
 >%%TAGS%%
 >
 ^n4ivqzisip
+
+
+>%%
+>```annotation-json
+>{"created":"2023-11-27T02:38:07.333Z","updated":"2023-11-27T02:38:07.333Z","document":{"title":"鸟哥的 Linux 私房菜：基础学习篇 第四版","link":[{"href":"urn:x-pdf:32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},{"href":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf"}],"documentFingerprint":"32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},"uri":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","target":[{"source":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","selector":[{"type":"TextPositionSelector","start":33553,"end":33615},{"type":"TextQuoteSelector","exact":"网络使用的是 bit 为单位，因此网络常使用的单位为 Mbps 是 Mbits persecond，亦即是每秒多少 Mbit","prefix":"之类的单位，这个 Hz 其实就是秒分之一。而在网络传输方面，由于","suffix":"。举例来说，大家常听到的 20M/5M 光世代传输速度，如果转成"}]}]}
+>```
+>%%
+>*%%PREFIX%%之类的单位，这个 Hz 其实就是秒分之一。而在网络传输方面，由于%%HIGHLIGHT%% ==网络使用的是 bit 为单位，因此网络常使用的单位为 Mbps 是 Mbits persecond，亦即是每秒多少 Mbit== %%POSTFIX%%。举例来说，大家常听到的 20M/5M 光世代传输速度，如果转成*
+>%%LINK%%[[#^prql82whbl|show annotation]]
+>%%COMMENT%%
+>
+>%%TAGS%%
+>
+^prql82whbl
+
+
+>%%
+>```annotation-json
+>{"created":"2023-11-27T02:42:31.518Z","text":"- 什么是光世代传输速度？\n- 答：光时代传输是指通过光纤网络实现的高速数据传输。这种传输方式使用的是光纤技术，能够支持高达几十甚至上百兆比特每秒(Mbps)甚至更高的数据传输速度\n</br>\n- 是如何计算出2.5MByte/s和625Byte/s的下载速度和上传速度的？\n- 答：20Mbps=20Mbit/s，而我们知道1Byte=8bit，所以MByte/s = Mbit/s÷8，即20Mbps÷8=2.5MByte/s。其实20Mbps和2.5MBps都是理论上的最大下载速度，只是单位不同而已","updated":"2023-11-27T02:42:31.518Z","document":{"title":"鸟哥的 Linux 私房菜：基础学习篇 第四版","link":[{"href":"urn:x-pdf:32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},{"href":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf"}],"documentFingerprint":"32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},"uri":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","target":[{"source":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","selector":[{"type":"TextPositionSelector","start":33621,"end":33704},{"type":"TextQuoteSelector","exact":"大家常听到的 20M/5M 光世代传输速度，如果转成文件大小的 Byte 时，其实理论最大传输值为：每秒 2.5MByte/ 每秒625KByte的下载/上传速度喔！","prefix":"its persecond，亦即是每秒多少 Mbit。举例来说，","suffix":"例题：假设你今天购买了500GB的硬盘一颗，但是格式化完毕后却只"}]}]}
+>```
+>%%
+>*%%PREFIX%%its persecond，亦即是每秒多少 Mbit。举例来说，%%HIGHLIGHT%% ==大家常听到的 20M/5M 光世代传输速度，如果转成文件大小的 Byte 时，其实理论最大传输值为：每秒 2.5MByte/ 每秒625KByte的下载/上传速度喔！== %%POSTFIX%%例题：假设你今天购买了500GB的硬盘一颗，但是格式化完毕后却只*
+>%%LINK%%[[#^07abyxkcbnok|show annotation]]
+>%%COMMENT%%
+>- 什么是光世代传输速度？
+>- 答：光时代传输是指通过光纤网络实现的高速数据传输。这种传输方式使用的是光纤技术，能够支持高达几十甚至上百兆比特每秒(Mbps)甚至更高的数据传输速度
+></br>
+>- 是如何计算出2.5MByte/s和625Byte/s的下载速度和上传速度的？
+>- 答：20Mbps=20Mbit/s，而我们知道1Byte=8bit，所以MByte/s = Mbit/s÷8，即20Mbps÷8=2.5MByte/s。其实20Mbps和2.5MBps都是理论上的最大下载速度，只是单位不同而已
+>%%TAGS%%
+>
+^07abyxkcbnok
+
+
+>%%
+>```annotation-json
+>{"created":"2023-11-27T02:58:59.247Z","updated":"2023-11-27T02:58:59.247Z","document":{"title":"鸟哥的 Linux 私房菜：基础学习篇 第四版","link":[{"href":"urn:x-pdf:32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},{"href":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf"}],"documentFingerprint":"32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},"uri":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","target":[{"source":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","selector":[{"type":"TextPositionSelector","start":33046,"end":33087},{"type":"TextQuoteSelector","exact":"1GBytes 的文件大小实际上为：1024x1024x1024Bytes 这么大","prefix":"00P 1000E一般来说，文件大小使用的是二进制的方式，所以 ","suffix":"！ 速度单位则常使用十进制，例如 1GHz 就是1000x100"}]}]}
+>```
+>%%
+>*%%PREFIX%%00P 1000E一般来说，文件大小使用的是二进制的方式，所以%%HIGHLIGHT%% ==1GBytes 的文件大小实际上为：1024x1024x1024Bytes 这么大== %%POSTFIX%%！ 速度单位则常使用十进制，例如 1GHz 就是1000x100*
+>%%LINK%%[[#^ss4u32j8ji|show annotation]]
+>%%COMMENT%%
+>
+>%%TAGS%%
+>
+^ss4u32j8ji
+
+
+>%%
+>```annotation-json
+>{"created":"2023-11-27T03:35:50.444Z","text":"硬盘商通常采用十进制测量硬盘的大小，即1G=1000M，所以500GB=500×1000×1000×1000个Byte。而操作系统通常采用二进制，因此1GB=1024×1024×1024Byte，因此，将它换算成操作系统的容量是：(500×1000×1000×1000)/(1024×1024×1024)=466GB左右","updated":"2023-11-27T03:35:50.444Z","document":{"title":"鸟哥的 Linux 私房菜：基础学习篇 第四版","link":[{"href":"urn:x-pdf:32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},{"href":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf"}],"documentFingerprint":"32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},"uri":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","target":[{"source":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","selector":[{"type":"TextPositionSelector","start":33779,"end":33854},{"type":"TextQuoteSelector","exact":"500GByte代表为50010001000*1000Byte之意。 转成文件的容量单位时使用二进制（1024为底），所以就成为466GB左右的容量了","prefix":"量，这是什么原因？答：因为一般硬盘制造商会使用十进制的单位，所以","suffix":"。硬盘厂商并非要骗人，只是因为硬盘的最小物理量为512Bytes"}]}]}
+>```
+>%%
+>*%%PREFIX%%量，这是什么原因？答：因为一般硬盘制造商会使用十进制的单位，所以%%HIGHLIGHT%% ==500GByte代表为50010001000*1000Byte之意。 转成文件的容量单位时使用二进制（1024为底），所以就成为466GB左右的容量了== %%POSTFIX%%。硬盘厂商并非要骗人，只是因为硬盘的最小物理量为512Bytes*
+>%%LINK%%[[#^b84czk6x1ko|show annotation]]
+>%%COMMENT%%
+>硬盘商通常采用十进制测量硬盘的大小，即1G=1000M，所以500GB=500×1000×1000×1000个Byte。而操作系统通常采用二进制，因此1GB=1024×1024×1024Byte，因此，将它换算成操作系统的容量是：(500×1000×1000×1000)/(1024×1024×1024)=466GB左右
+>%%TAGS%%
+>
+^b84czk6x1ko
+
+
+>%%
+>```annotation-json
+>{"created":"2023-11-27T03:43:50.723Z","updated":"2023-11-27T03:43:50.723Z","document":{"title":"鸟哥的 Linux 私房菜：基础学习篇 第四版","link":[{"href":"urn:x-pdf:32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},{"href":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf"}],"documentFingerprint":"32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},"uri":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","target":[{"source":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","selector":[{"type":"TextPositionSelector","start":34347,"end":34408},{"type":"TextQuoteSelector","exact":"北桥：负责链接速度较快的CPU、内存与显卡接口等元件；（2）南桥：负责连接速度较慢的设备接口， 包括硬盘、USB、网卡等等","prefix":"期的芯片组通常分为两个桥接器来控制各元件的沟通， 分别是：（1）","suffix":"。（芯片组的南北桥与三国的大小乔没有关系@_@）。不过由于北桥最"}]}]}
+>```
+>%%
+>*%%PREFIX%%期的芯片组通常分为两个桥接器来控制各元件的沟通， 分别是：（1）%%HIGHLIGHT%% ==北桥：负责链接速度较快的CPU、内存与显卡接口等元件；（2）南桥：负责连接速度较慢的设备接口， 包括硬盘、USB、网卡等等== %%POSTFIX%%。（芯片组的南北桥与三国的大小乔没有关系@_@）。不过由于北桥最*
+>%%LINK%%[[#^ofpc6q8zlgk|show annotation]]
+>%%COMMENT%%
+>
+>%%TAGS%%
+>
+^ofpc6q8zlgk
+
+
+
+>%%
+>```annotation-json
+>{"created":"2023-11-27T03:54:50.060Z","updated":"2023-11-27T03:54:50.060Z","document":{"title":"鸟哥的 Linux 私房菜：基础学习篇 第四版","link":[{"href":"urn:x-pdf:32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},{"href":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf"}],"documentFingerprint":"32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},"uri":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","target":[{"source":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","selector":[{"type":"TextPositionSelector","start":35549,"end":35589},{"type":"TextQuoteSelector","exact":"CPU的频率了！什么是频率呢？简单的说， 频率就是CPU每秒钟可以进行的工作次数","prefix":"作效率的优劣。除了这点之外， CPU性能的比较还有什么呢？那就是","suffix":"。 所以频率越高表示这颗CPU单位时间内可以作更多的事情。举例来"}]}]}
+>```
+>%%
+>*%%PREFIX%%作效率的优劣。除了这点之外， CPU性能的比较还有什么呢？那就是%%HIGHLIGHT%% ==CPU的频率了！什么是频率呢？简单的说， 频率就是CPU每秒钟可以进行的工作次数== %%POSTFIX%%。 所以频率越高表示这颗CPU单位时间内可以作更多的事情。举例来*
+>%%LINK%%[[#^4hsenzoc6cu|show annotation]]
+>%%COMMENT%%
+>
+>%%TAGS%%
+>
+^4hsenzoc6cu
+
+
+>%%
+>```annotation-json
+>{"created":"2023-12-07T00:53:59.394Z","updated":"2023-12-07T00:53:59.394Z","document":{"title":"鸟哥的 Linux 私房菜：基础学习篇 第四版","link":[{"href":"urn:x-pdf:32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},{"href":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf"}],"documentFingerprint":"32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},"uri":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","target":[{"source":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","selector":[{"type":"TextPositionSelector","start":36071,"end":36135},{"type":"TextQuoteSelector","exact":"外频指的是CPU与外部元件进行数据传输时的速度，倍频则是 CPU 内部用来加速工作性能的一个倍数， 两者相乘才是CPU的频率速度","prefix":"有所谓的外频与倍频了。总结来说，在早期的 CPU 设计中，所谓的","suffix":"。例如 Intel Core 2 E8400 的内频为 3.0G"}]}]}
+>```
+>%%
+>*%%PREFIX%%有所谓的外频与倍频了。总结来说，在早期的 CPU 设计中，所谓的%%HIGHLIGHT%% ==外频指的是CPU与外部元件进行数据传输时的速度，倍频则是 CPU 内部用来加速工作性能的一个倍数， 两者相乘才是CPU的频率速度== %%POSTFIX%%。例如 Intel Core 2 E8400 的内频为 3.0G*
+>%%LINK%%[[#^1q3qc744j2i|show annotation]]
+>%%COMMENT%%
+>
+>%%TAGS%%
+>
+^1q3qc744j2i
+
+
+>%%
+>```annotation-json
+>{"created":"2023-12-07T01:00:09.462Z","text":"内频=外频×倍频\n3.0GHz = 3000MHz\n3000MHz = 333MHz × z\nz=9","updated":"2023-12-07T01:00:09.462Z","document":{"title":"鸟哥的 Linux 私房菜：基础学习篇 第四版","link":[{"href":"urn:x-pdf:32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},{"href":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf"}],"documentFingerprint":"32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},"uri":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","target":[{"source":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","selector":[{"type":"TextPositionSelector","start":36159,"end":36190},{"type":"TextQuoteSelector","exact":"内频为 3.0GHz，而外频是333MHz，因此倍频就是9倍啰","prefix":"CPU的频率速度。例如 Intel Core 2 E8400 的","suffix":"！（3.0G=333Mx9, 其中1G=1000M）Tips 很"}]}]}
+>```
+>%%
+>*%%PREFIX%%CPU的频率速度。例如 Intel Core 2 E8400 的%%HIGHLIGHT%% ==内频为 3.0GHz，而外频是333MHz，因此倍频就是9倍啰== %%POSTFIX%%！（3.0G=333Mx9, 其中1G=1000M）Tips 很*
+>%%LINK%%[[#^9xvyyx81jmo|show annotation]]
+>%%COMMENT%%
+>内频=外频×倍频
+>3.0GHz = 3000MHz
+>3000MHz = 333MHz × z
+>z=9
+>%%TAGS%%
+>
+^9xvyyx81jmo
+
+
+>%%
+>```annotation-json
+>{"created":"2023-12-07T01:03:47.698Z","updated":"2023-12-07T01:03:47.698Z","document":{"title":"鸟哥的 Linux 私房菜：基础学习篇 第四版","link":[{"href":"urn:x-pdf:32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},{"href":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf"}],"documentFingerprint":"32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},"uri":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","target":[{"source":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","selector":[{"type":"TextPositionSelector","start":36242,"end":36282},{"type":"TextQuoteSelector","exact":"超频指的是： 将CPU的倍频或者是外频通过主板的设置功能更改成较高频率的一种方式","prefix":"1000M）Tips 很多计算机硬件玩家很喜欢玩“超频”，所谓的","suffix":"。但因为CPU的倍频通常在出厂时已经被锁定而无法修改， 因此较常"}]}]}
+>```
+>%%
+>*%%PREFIX%%1000M）Tips 很多计算机硬件玩家很喜欢玩“超频”，所谓的%%HIGHLIGHT%% ==超频指的是： 将CPU的倍频或者是外频通过主板的设置功能更改成较高频率的一种方式== %%POSTFIX%%。但因为CPU的倍频通常在出厂时已经被锁定而无法修改， 因此较常*
+>%%LINK%%[[#^h92czts8m8u|show annotation]]
+>%%COMMENT%%
+>
+>%%TAGS%%
+>
+^h92czts8m8u
+
+
+>%%
+>```annotation-json
+>{"created":"2023-12-07T06:37:35.023Z","text":"QPI（QuickPath Interconnect）：\n- QPI是一种高速点对点的数据交换总线协议\n- 主要用于连接处理器和芯片组，或者处理器之间。在多处理器系统中它允许处理器之间直接通信\n- QPI设计用于替代前端总线（FSB）架构，提供更高的带宽和更低的延迟\n- 它支持高频传输速率，并且可以提供更大的数据吞吐量\n\nDMI（Direct Media Interface）：\n- DMI是一种点对点互连接口，通常用于因特尔芯片组内部\n- 它连接中央处理器（CPU）与平台控制器集线器（PCH），即芯片组的南桥\n- DMI用于传输I/O相关的数据，例如那些来自硬盘驱动器、USB设备和其他外围设备的数据\n- 它被设计来替代原有的南桥和北桥之间的接口，并提供足够的带宽来处理现代I/O需求","updated":"2023-12-07T06:37:35.023Z","document":{"title":"鸟哥的 Linux 私房菜：基础学习篇 第四版","link":[{"href":"urn:x-pdf:32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},{"href":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf"}],"documentFingerprint":"32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},"uri":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","target":[{"source":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","selector":[{"type":"TextPositionSelector","start":36569,"end":36617},{"type":"TextQuoteSelector","exact":"在Intel部份使用 QPI （Quick PathInterconnect） 与 DMI 技术","prefix":"合到 CPU 内部，而链接 CPU 与内存、显卡的控制器的设计，","suffix":"，而 AMD 部份则使用 Hyper Transport 了，这"}]}]}
+>```
+>%%
+>*%%PREFIX%%合到 CPU 内部，而链接 CPU 与内存、显卡的控制器的设计，%%HIGHLIGHT%% ==在Intel部份使用 QPI （Quick PathInterconnect） 与 DMI 技术== %%POSTFIX%%，而 AMD 部份则使用 Hyper Transport 了，这*
+>%%LINK%%[[#^sveh4q4f3r|show annotation]]
+>%%COMMENT%%
+>QPI（QuickPath Interconnect）：
+>- QPI是一种高速点对点的数据交换总线协议
+>- 主要用于连接处理器和芯片组，或者处理器之间。在多处理器系统中它允许处理器之间直接通信
+>- QPI设计用于替代前端总线（FSB）架构，提供更高的带宽和更低的延迟
+>- 它支持高频传输速率，并且可以提供更大的数据吞吐量
+>
+>DMI（Direct Media Interface）：
+>- DMI是一种点对点互连接口，通常用于因特尔芯片组内部
+>- 它连接中央处理器（CPU）与平台控制器集线器（PCH），即芯片组的南桥
+>- DMI用于传输I/O相关的数据，例如那些来自硬盘驱动器、USB设备和其他外围设备的数据
+>- 它被设计来替代原有的南桥和北桥之间的接口，并提供足够的带宽来处理现代I/O需求
+>%%TAGS%%
+>
+^sveh4q4f3r
+
+
+>%%
+>```annotation-json
+>{"created":"2023-12-08T00:55:30.469Z","updated":"2023-12-08T00:55:30.469Z","document":{"title":"鸟哥的 Linux 私房菜：基础学习篇 第四版","link":[{"href":"urn:x-pdf:32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},{"href":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf"}],"documentFingerprint":"32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},"uri":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","target":[{"source":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","selector":[{"type":"TextPositionSelector","start":37562,"end":37615},{"type":"TextQuoteSelector","exact":"CPU每次能够处理的数据量称为字组大小（word size）， 字组大小依据CPU的设计而有32位与64位","prefix":" 8 Bytes = 12.8GByte/s。与总线宽度相似的，","suffix":"。我们现在所称的电脑是32或64位主要是依据这个 CPU解析的字"}]}]}
+>```
+>%%
+>*%%PREFIX%%8 Bytes = 12.8GByte/s。与总线宽度相似的，%%HIGHLIGHT%% ==CPU每次能够处理的数据量称为字组大小（word size）， 字组大小依据CPU的设计而有32位与64位== %%POSTFIX%%。我们现在所称的电脑是32或64位主要是依据这个 CPU解析的字*
+>%%LINK%%[[#^tiahj36jt1m|show annotation]]
+>%%COMMENT%%
+>
+>%%TAGS%%
+>
+^tiahj36jt1m
+
+
+>%%
+>```annotation-json
+>{"created":"2023-12-08T01:03:37.258Z","updated":"2023-12-08T01:03:37.258Z","document":{"title":"鸟哥的 Linux 私房菜：基础学习篇 第四版","link":[{"href":"urn:x-pdf:32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},{"href":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf"}],"documentFingerprint":"32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},"uri":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","target":[{"source":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","selector":[{"type":"TextPositionSelector","start":39226,"end":39331},{"type":"TextQuoteSelector","exact":"个人电脑的内存主要元件为动态随机存取内存（Dynamic Random Access Memory, DRAM）， 随机存取内存只有在通电时才能记录与使用，断电后数据就消失了。因此我们也称这种RAM为挥发性内存","prefix":"），不论是软件程序还是数据，都必须要读入内存后CPU才能利用。 ","suffix":"。DRAM根据技术的更新又分好几代，而使用上较广泛的有所谓的SD"}]}]}
+>```
+>%%
+>*%%PREFIX%%），不论是软件程序还是数据，都必须要读入内存后CPU才能利用。%%HIGHLIGHT%% ==个人电脑的内存主要元件为动态随机存取内存（Dynamic Random Access Memory, DRAM）， 随机存取内存只有在通电时才能记录与使用，断电后数据就消失了。因此我们也称这种RAM为挥发性内存== %%POSTFIX%%。DRAM根据技术的更新又分好几代，而使用上较广泛的有所谓的SD*
+>%%LINK%%[[#^837ty9x4rzf|show annotation]]
+>%%COMMENT%%
+>
+>%%TAGS%%
+>
+^837ty9x4rzf
+
+
+>%%
+>```annotation-json
+>{"created":"2023-12-08T01:08:51.050Z","updated":"2023-12-08T01:08:51.050Z","document":{"title":"鸟哥的 Linux 私房菜：基础学习篇 第四版","link":[{"href":"urn:x-pdf:32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},{"href":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf"}],"documentFingerprint":"32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},"uri":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","target":[{"source":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","selector":[{"type":"TextPositionSelector","start":39381,"end":39461},{"type":"TextQuoteSelector","exact":"两种内存的差别除了在于脚位与工作电压上的不同之外，DDR是所谓的双倍数据传送速度（Double Data Rate）， 他可以在一次工作周期中进行两次数据的传送","prefix":"而使用上较广泛的有所谓的SDRAM与DDR SDRAM两种。 这","suffix":"，感觉上就好像鸟哥的 Linux 私房菜：基础学习篇 第四版46"}]}]}
+>```
+>%%
+>*%%PREFIX%%而使用上较广泛的有所谓的SDRAM与DDR SDRAM两种。 这%%HIGHLIGHT%% ==两种内存的差别除了在于脚位与工作电压上的不同之外，DDR是所谓的双倍数据传送速度（Double Data Rate）， 他可以在一次工作周期中进行两次数据的传送== %%POSTFIX%%，感觉上就好像鸟哥的 Linux 私房菜：基础学习篇 第四版46*
+>%%LINK%%[[#^5iyre8ibm4s|show annotation]]
+>%%COMMENT%%
+>
+>%%TAGS%%
+>
+^5iyre8ibm4s
+
+
+>%%
+>```annotation-json
+>{"created":"2023-12-08T01:13:29.887Z","updated":"2023-12-08T01:13:29.887Z","document":{"title":"鸟哥的 Linux 私房菜：基础学习篇 第四版","link":[{"href":"urn:x-pdf:32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},{"href":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf"}],"documentFingerprint":"32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},"uri":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","target":[{"source":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","selector":[{"type":"TextPositionSelector","start":39992,"end":40097},{"type":"TextQuoteSelector","exact":" DDR3/DDR3L 同时支持，我们知道 DDR3 了，那DDR3L 是啥鬼？ 为了节省更多的电力，新的制程中降低了内存的操作电压，因此 DDR3 标准电压为 1.5V，但 DDR3L 则仅须 1.35V 喔","prefix":"了耶！超快超快！Tips 在图 0.2.1 中，内存的规格内提到","suffix":"！通常可以用在耗电量需求更低的笔记本中！ 但并非所有的系统都同步"}]}]}
+>```
+>%%
+>*%%PREFIX%%了耶！超快超快！Tips 在图 0.2.1 中，内存的规格内提到%%HIGHLIGHT%% ==DDR3/DDR3L 同时支持，我们知道 DDR3 了，那DDR3L 是啥鬼？ 为了节省更多的电力，新的制程中降低了内存的操作电压，因此 DDR3 标准电压为 1.5V，但 DDR3L 则仅须 1.35V 喔== %%POSTFIX%%！通常可以用在耗电量需求更低的笔记本中！ 但并非所有的系统都同步*
+>%%LINK%%[[#^jy84kdda7kf|show annotation]]
+>%%COMMENT%%
+>
+>%%TAGS%%
+>
+^jy84kdda7kf
+
+
+>%%
+>```annotation-json
+>{"created":"2023-12-08T01:58:24.914Z","updated":"2023-12-08T01:58:24.914Z","document":{"title":"鸟哥的 Linux 私房菜：基础学习篇 第四版","link":[{"href":"urn:x-pdf:32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},{"href":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf"}],"documentFingerprint":"32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},"uri":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","target":[{"source":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","selector":[{"type":"TextPositionSelector","start":42710,"end":42737},{"type":"TextQuoteSelector","exact":"显卡主要也是通过CPU的控制芯片来与CPU、内存等沟通","prefix":"私房菜：基础学习篇 第四版490.2 个人电脑架构与相关设备元件","suffix":"。如前面提到的，对于图形影像（尤其是3D游戏）来说， 显卡也是需"}]}]}
+>```
+>%%
+>*%%PREFIX%%私房菜：基础学习篇 第四版490.2 个人电脑架构与相关设备元件%%HIGHLIGHT%% ==显卡主要也是通过CPU的控制芯片来与CPU、内存等沟通== %%POSTFIX%%。如前面提到的，对于图形影像（尤其是3D游戏）来说， 显卡也是需*
+>%%LINK%%[[#^vpygp6p6cmn|show annotation]]
+>%%COMMENT%%
+>
+>%%TAGS%%
+>
+^vpygp6p6cmn
+
+
+
+
+>%%
+>```annotation-json
+>{"created":"2023-12-08T02:54:25.914Z","text":"磁道：磁道就是由扇区组成的那一圈\n柱面：所有盘面中相对位置相同的磁道组成柱面","updated":"2023-12-08T02:54:25.914Z","document":{"title":"鸟哥的 Linux 私房菜：基础学习篇 第四版","link":[{"href":"urn:x-pdf:32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},{"href":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf"}],"documentFingerprint":"32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},"uri":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","target":[{"source":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","selector":[{"type":"TextPositionSelector","start":45002,"end":45111},{"type":"TextQuoteSelector","exact":"磁盘的最小物理储存单位，称之为扇区 （sector），那同一个同心圆的扇区组合成的圆就是所谓的磁道（track）。 由于磁盘里面可能会有多个盘片，因此在所有盘片上面的同一个磁道可以组合成所谓的柱面 （cylinder）","prefix":"些小区块整合成一个圆形，让机器手臂上的磁头去存取。这个小区块就是","suffix":"。我们知道同心圆外圈的圆比较大，占用的面积比内圈多啊！所以，为了"}]}]}
+>```
+>%%
+>*%%PREFIX%%些小区块整合成一个圆形，让机器手臂上的磁头去存取。这个小区块就是%%HIGHLIGHT%% ==磁盘的最小物理储存单位，称之为扇区 （sector），那同一个同心圆的扇区组合成的圆就是所谓的磁道（track）。 由于磁盘里面可能会有多个盘片，因此在所有盘片上面的同一个磁道可以组合成所谓的柱面 （cylinder）== %%POSTFIX%%。我们知道同心圆外圈的圆比较大，占用的面积比内圈多啊！所以，为了*
+>%%LINK%%[[#^cuizgt8sc7|show annotation]]
+>%%COMMENT%%
+>磁道：磁道就是由扇区组成的那一圈
+>柱面：所有盘面中相对位置相同的磁道组成柱面
+>%%TAGS%%
+>
+^cuizgt8sc7
+
+
+>%%
+>```annotation-json
+>{"created":"2023-12-08T03:06:11.329Z","updated":"2023-12-08T03:06:11.329Z","document":{"title":"鸟哥的 Linux 私房菜：基础学习篇 第四版","link":[{"href":"urn:x-pdf:32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},{"href":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf"}],"documentFingerprint":"32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},"uri":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","target":[{"source":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","selector":[{"type":"TextPositionSelector","start":45380,"end":45481},{"type":"TextQuoteSelector","exact":"因此在磁盘的分区方面，目前有旧式的MSDOS 相容模式，以及较新的 GPT 模式喔！ 在较新的 GPT 模式下，磁盘的分区通常使用扇区号码来设计，跟过去旧的 MSDOS 是通过柱面号码来分区的情况不同喔","prefix":"区设计！ 购买的时候也需要注意一下。也因为这个扇区的设计不同了，","suffix":"！相关的说明我们谈到磁盘管理 （第七章） 再来聊！鸟哥的 Lin"}]}]}
+>```
+>%%
+>*%%PREFIX%%区设计！ 购买的时候也需要注意一下。也因为这个扇区的设计不同了，%%HIGHLIGHT%% ==因此在磁盘的分区方面，目前有旧式的MSDOS 相容模式，以及较新的 GPT 模式喔！ 在较新的 GPT 模式下，磁盘的分区通常使用扇区号码来设计，跟过去旧的 MSDOS 是通过柱面号码来分区的情况不同喔== %%POSTFIX%%！相关的说明我们谈到磁盘管理 （第七章） 再来聊！鸟哥的 Lin*
+>%%LINK%%[[#^536ntc7mnn9|show annotation]]
+>%%COMMENT%%
+>
+>%%TAGS%%
+>
+^536ntc7mnn9
+
+
+>%%
+>```annotation-json
+>{"created":"2023-12-08T03:07:33.977Z","updated":"2023-12-08T03:07:33.977Z","document":{"title":"鸟哥的 Linux 私房菜：基础学习篇 第四版","link":[{"href":"urn:x-pdf:32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},{"href":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf"}],"documentFingerprint":"32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},"uri":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","target":[{"source":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","selector":[{"type":"TextPositionSelector","start":45552,"end":45630},{"type":"TextQuoteSelector","exact":"为了要提升磁盘的传输速度，磁盘与主板的连接接口也经过多次的改版，因此有许多不同的接口喔！传统磁盘接口包括有 SATA, SAS, IDE 与 SCSI 等等","prefix":"基础学习篇 第四版520.2 个人电脑架构与相关设备元件传输接口","suffix":"。 若考虑外接式磁盘，那就还包括了 USB, eSATA 等等接"}]}]}
+>```
+>%%
+>*%%PREFIX%%基础学习篇 第四版520.2 个人电脑架构与相关设备元件传输接口%%HIGHLIGHT%% ==为了要提升磁盘的传输速度，磁盘与主板的连接接口也经过多次的改版，因此有许多不同的接口喔！传统磁盘接口包括有 SATA, SAS, IDE 与 SCSI 等等== %%POSTFIX%%。 若考虑外接式磁盘，那就还包括了 USB, eSATA 等等接*
+>%%LINK%%[[#^loo8rs4qc7h|show annotation]]
+>%%COMMENT%%
+>
+>%%TAGS%%
+>
+^loo8rs4qc7h
+
+
+>%%
+>```annotation-json
+>{"created":"2023-12-08T03:09:48.127Z","text":"4KByte的扇区，通常称为“4k扇区”或“高级格式”，是硬盘驱动器（HDD）和固态驱动器（SSD）的一个较新的数据块配置，它采用4096个字节（4KB）作为单个扇区的大小。这是旧式硬盘中512个字节扇区大小的8倍。","updated":"2023-12-08T03:09:48.127Z","document":{"title":"鸟哥的 Linux 私房菜：基础学习篇 第四版","link":[{"href":"urn:x-pdf:32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},{"href":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf"}],"documentFingerprint":"32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},"uri":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","target":[{"source":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","selector":[{"type":"TextPositionSelector","start":45273,"end":45351},{"type":"TextQuoteSelector","exact":"原本硬盘的扇区都是设计成 512Byte 的容量，但因为近期以来硬盘的容量越来越大，为了减少数据量的拆解，所以新的大容量硬盘已经有 4KByte 的扇区设计","prefix":" 因此通常数据的读写会由外圈开始往内写的喔！这是默认值啊！另外，","suffix":"！ 购买的时候也需要注意一下。也因为这个扇区的设计不同了，因此在"}]}]}
+>```
+>%%
+>*%%PREFIX%%因此通常数据的读写会由外圈开始往内写的喔！这是默认值啊！另外，%%HIGHLIGHT%% ==原本硬盘的扇区都是设计成 512Byte 的容量，但因为近期以来硬盘的容量越来越大，为了减少数据量的拆解，所以新的大容量硬盘已经有 4KByte 的扇区设计== %%POSTFIX%%！ 购买的时候也需要注意一下。也因为这个扇区的设计不同了，因此在*
+>%%LINK%%[[#^ay9t3ydsocj|show annotation]]
+>%%COMMENT%%
+>4KByte的扇区，通常称为“4k扇区”或“高级格式”，是硬盘驱动器（HDD）和固态驱动器（SSD）的一个较新的数据块配置，它采用4096个字节（4KB）作为单个扇区的大小。这是旧式硬盘中512个字节扇区大小的8倍。
+>%%TAGS%%
+>
+^ay9t3ydsocj
+
+
+>%%
+>```annotation-json
+>{"created":"2023-12-08T03:42:00.642Z","updated":"2023-12-08T03:42:00.642Z","document":{"title":"鸟哥的 Linux 私房菜：基础学习篇 第四版","link":[{"href":"urn:x-pdf:32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},{"href":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf"}],"documentFingerprint":"32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},"uri":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","target":[{"source":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","selector":[{"type":"TextPositionSelector","start":47907,"end":47962},{"type":"TextQuoteSelector","exact":"固态硬盘最大的好处是，它没有马达不需要转动，而是通过内存直接读写的特性，因此除了没数据延迟且快速之外，还很省电","prefix":"Disk 或 Solid State Driver, SSD）。","suffix":"！ 不过早期的 SSD 有个很重要的致命伤，就是这些闪存有“写入"}]}]}
+>```
+>%%
+>*%%PREFIX%%Disk 或 Solid State Driver, SSD）。%%HIGHLIGHT%% ==固态硬盘最大的好处是，它没有马达不需要转动，而是通过内存直接读写的特性，因此除了没数据延迟且快速之外，还很省电== %%POSTFIX%%！ 不过早期的 SSD 有个很重要的致命伤，就是这些闪存有“写入*
+>%%LINK%%[[#^krg3lilbncf|show annotation]]
+>%%COMMENT%%
+>
+>%%TAGS%%
+>
+^krg3lilbncf
+
+
