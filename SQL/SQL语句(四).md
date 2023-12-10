@@ -44,7 +44,7 @@ keywords:
 	- UNIQUE属性：表示建立一个唯一索引，即这列上的值都是唯一的，不能重复的
 	- CLUSTER属性：表示建立一个聚簇索引
 	- ON表示在哪个表上建立索引
-- 例：
+- 例（建立索引）：
 	- 使用UNIQUE为学生-课程数据库中的Student，Course，SC三个表建立索引
 		- 语句如下；
 			- CREATE UNIQUE INDEX Stusno ON Student(Sno);</br>CREATE UNIQUE INDEX Coucno ON Course(Cno);</br>CREATE UNIQUE INDEX SCno ON SC(Sno.ASC,Cno.DESC) 
@@ -52,7 +52,7 @@ keywords:
 			- Student表按学号升序建立唯一索引（默认）
 			- Course表按课程号升序建立唯一索引
 			- 而在SC选修表中，由于需要学生学号和课程号共同组成联合主键才能唯一确认一行元组，因此我们需要对Sno和Cno共同建立索引，其中Sno按升序排列，Cno按降序排列
-- 例：
+- 例（建立聚簇索引）：
 	- 使用CLUSTER为Student表的Sname列上建立一个聚簇索引
 		- 语句如下：
 			- CREATE CLUTER INDEX Stusname ON Student(Sname);

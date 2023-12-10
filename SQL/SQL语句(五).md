@@ -154,6 +154,59 @@ published: false
 				- 语句：SELECT Sname FROM Student</br>&emsp;&emsp;&emsp;WHERE Sage<20 AND Sdept='IS';
 			- 例如：查询信息系（IS）、数学系（MA）和计算机科学系（CS）的学生的姓名和性别
 				- 语句：SELECT Sname,Ssex FROM Student</br>&emsp;&emsp;&emsp;WHERE Sdept='IS' OR Sdept='MA' OR Sdept='CS';
-		  
-		  
+### <font color = "AA7700">ORDER BY子句</font>
+<strong>ORDER BY子句可以按一个或多个属性列排序：</strong>
+- 升序：ASC;（默认为升序排序）
+- 降序：DESC;
+- 当排序列含空值时：（空值默认为最大值）
+	- ASC：排序列为空值的元组最后显示
+	- DESC：排序列为空值的元组最先显示
+- 应用：
+	- 例如：查询选修了3号课程的学生的学号及其成绩，查询结果按分数降序排列
+		- 语句：SELECT Sno,Grade FROM SC WHERE Cno = '3'</br>&emsp;&emsp;&emsp;ORDER BY Grade DESC;
+	- 例如：查询全体学生情况，查询结果按所在系的系号升序排列，同一系中的学生按年龄降序排列
+		- 语句：SELECT \* FROM Student</br>&emsp;&emsp;&emsp;ORDER BY Sdept,Sage DESC;
+
+### <font color = "AA7700">聚集函数</font>
+| 函数 | 说明 |
+|:----:|:---:|
+| COUNT (\[DISTINCT \| ALL ] \*) | 统计元组个数 |
+| COUNT (\[DISTINCT \| ALL] \<列名>) | 统计一列中值的个数 |
+| SUM (\[DISTINCT \| ALL] \<列名>) | 计算一列值的总和（注意，此列必须是数值列）|
+| AVG (\[DISTINCT \| ALL] \<列名>) | 计算一列值的平均值（注意，此列必须是数值列）|
+| MAX (\[DISTINCT \| ALL] \<列名>) | 求一列值的最大值 |
+| MIN (\[DISTINCT \| ALL] \<列名>) | 求一列值中的最小值|
+注意：默认是ALL；
+- 例：查询学生总人数
+	- 语句：SELECT COUNT (\*) FROM Student;
+	- 说明：从Student表中查询一共有多少个元组（记录），有多少个元组就代表有多少学生
+- 例：查询选修了课程的学生人数
+	- 语句：SELECT COUNT (DISTINCT Sno) FROM SC;
+	- 说明：从SC表中统计一共有多少个学生学号（Sno），因为一个学生可能会选修多门课程，因此需要去重
+- 例：查询学生200215012选修课程的总学分数
+	- 语句：SELECT SUM (Ccredit) FROM SC,Course</br>&emsp;&emsp;&emsp;WHERE Sno = '200215012'</br>&emsp;&emsp;&emsp;AND SC.Cno = Course.Cno
+	- 说明：此查询涉及到联合查询
+- 例：计算1号课程的学生平均成绩
+	- 语句：SELECT AVG (Grade) FROM SC</br>&emsp;&emsp;&emsp;WHERE Cno = '1';
+- 例：查询选修1号课程的学生最高分数
+	- 语句：SELECT MAX (Grade) FROM SC</br>&emsp;&emsp;&emsp;WHERE Cno = '1';
+
+<font color = "CC6600">「注意：WHERE子句中是不能用聚集函数作为条件表达式的。聚集函数只能用于SELECT子句和GROUP BY中的HAVING子句」</font>
+
+### <font color = "AA7700">GROUP BY</font>
+<strong>GROUP BY子句的作用是：按指定的一列或多列值分组，值相等的为一组，来细化聚集函数的作用对象</strong>
+- 说明：
+	- 未对查询结果分组，聚集函数将作用于整个查询结果
+	- 对查询结果分组后，聚集函数将分别作用于每个组
+- 例：求各个课程号及相应的选课人数
+	- 语句：SELECT Cno,COUNT (Sno) FROM SC </br>&emsp;&emsp;&emsp;GROUP BY Cno;
+	- 说明：如果有GROUP BY，则SELECT后面只能跟两列信息，第一列为GROUP BY后面的列，第二列就是聚集函数所计算出来的值
+	- 查询结果：
+		- ![](https://arturia-blog-1316646580.cos.ap-shanghai.myqcloud.com/ArturiaBlogPicGo%2F%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-12-10%20165317.png)
+- <font color = "CC6600">「注意：GROUP BY子句进行分组之后，可以使用HAVING短语指定筛选条件」</font>
+	- 例如：查询选修了3门以上课程的学生学号
+		- 语句：SELECT Sno FROM SC </br>&emsp;&emsp;&emsp;GROUP BY Sno</br>&emsp;&emsp;&emsp;HAVING COUNT (\*) > 3;
+		- <font color = "CC6600">「注意：GROUP BY后面不能接WHERE，只能接HAVING，利用聚集函数进行筛选」</font>
+
+
 
