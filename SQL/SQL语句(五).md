@@ -208,5 +208,74 @@ published: false
 		- 语句：SELECT Sno FROM SC </br>&emsp;&emsp;&emsp;GROUP BY Sno</br>&emsp;&emsp;&emsp;HAVING COUNT (\*) > 3;
 		- <font color = "CC6600">「注意：GROUP BY后面不能接WHERE，只能接HAVING，利用聚集函数进行筛选」</font>
 
+## <font color = "886600">多表查询</font>
+### <font color = "AA7700">连接查询</font>
+1. 等值与非等值连接查询
+	连接查询的`WHERE`子句中用来连接两个表的条件称为<font color = "CC6600">「连接条件」</font>或<font color = "CC6600">「连接谓词」</font>，其一般格式如下：
+	- 格式一：\[\<表名1>.]\<列名1> \<比较运算符> \[\<表明2>.]\<列名2>;</br>其中，比较运算符有：=、>、<、>=、<=、!=
+	- 格式二：\[\<表名1>.]\<列名1> BETWEEN \[\<表名2>.]\<列名2> AND \[\<表名2>.]\<列名3>;
+	- 注意：
+		- 当连接运算符为“=”时称为<font color = "CC6600">「等值连接」</font>，其他运算符称为<font color = "CC6600">「非等值连接」</font>
+		- 连接谓词中的列名称为<font color = "CC6600">「连接字段」</font>，并且各连接字段必须是可比的，但名字不必是相同的
+	- 例如：查询每个学生及其选修课程的情况
+		- 语句：SELECT Student.\*,SC.\*</br>&emsp;&emsp;&emsp;FROM Student,SC</br>&emsp;&emsp;&emsp;WHERE Student.Sno=SC.Sno
+2. 自然连接
+	若在<font color = "CC6600">「等值连接」</font>中把目标列中重复的属性列去掉则为自然连接
+	- 例如：对上例用自然连接完成
+	- 语句：SELECT Student.Sno,Sname,Ssex,Sage,Sdept,Cno,Grade</br>&emsp;&emsp;&emsp;FROM Student,SC</br>&emsp;&emsp;&emsp;WHERE Student.Sno = SC.Sno
+	- 说明：为什么只有Sno列需要使用表名而后面几列不需要使用表名，因为Sno列是Student和SC共有的列，如果只用列名来表示那么DBMS将无法知道是显示Student表中的Sno还是显示SC表中的Sno，因此需要使用表名来区分，而Sname之类的列是每个表独有的，DBMS可以很容易的区分，因此不需要使用表名。<font color = "CC6600">「但是为了规范以及区分，还是建议加上表名进行区分提高可阅读性」</font>
+3. 自身连接
+	一个表与其自己进行连接
+	- 说明：
+		- 需要给表<font color = "CC6600">「起表名以示区别」</font>
+		- 由于所有属性名都是同名属性，因此<font color = "CC6600">「必须使用别名前缀」</font>
+	- 例如：查询每一门课的间接先修课（即先修课的先修课）
+		- 语句：SELECT FIRST.Cno,SECOND.Cpno</br>&emsp;&emsp;&emsp;FROM Course FIRST,Course SECOND</br>&emsp;&emsp;&emsp;WHERE FIRST.Cpno = SECOND.C no
+		- 说明：设置表的别名在`FROM`子句中进行设置
+4. 外连接
+	- 普通连接操作只输出满足连接条件的元组
+	- <font color = "CC6600">「外连接」</font>操作以指定表为连接主体，将主体表中不满足连接条件的元组一并输出
+	- 外连接又分为：<font color = "CC6600">「左外连接」</font>和<font color = "CC6600">「右外连接」</font>
+		- 左外连接：列出左边关系中所有的元组
+			- 语句：LEFT OUT JOIN \<表名> ON
+		- 右外连接：列出右边关系中所有的元组
+			- 语句：RIGHT OUT JOIN \<表名> ON
+	- 例如：查询每个学生及其选修课程的情况
+		- 语句：SELECT Student.Sno,Sname,Ssex,Sage,Sdept,Cno,Grade</br>&emsp;&emsp;&emsp;FROM Student,SC</br>&emsp;&emsp;&emsp;WHERE Student.Sno = SC.Sno
+		- 上述语句可改为：SELECT Student.Sno,Sname,Ssex,Sage,Sdept,Cno,Grade</br>FROM Student <font color = "CC6600">LEFT OUT JOIN SC ON</font> (Student.Sno = SC.Sno)
+		- 说明：LEFT OUT JOIN SC ON语句表示“Student表与SC表建立左外连接”
+5. 多表连接
+	连接操作时两个以上的表进行连接
+	- 例如：查询每个学生的学号、姓名、选修的课程名及其成绩
+		- 语句：SELECT Student.Sno,Sname,Cname,Grade</br>&emsp;&emsp;&emsp;FROM Student,SC,Course</br>&emsp;&emsp;&emsp;WHERE Student.Sno = SC.Sno AND SC.Cno = Course.Cno;
 
-
+## <font color = "886600">嵌套查询</font>
+一个`SELECT-FROM-WHERE`语句称为一个<font color = "CC6600">「查询块」</font>
+嵌套查询定义：<strong>是指将一个查询块嵌套在另一个查询块的WHERE子句或HAVING短语的条件中的查询</strong>
+- 说明：
+	- 子查询中不能使用`ORDER BY`子句
+	- 层层嵌套方式反映了SQL语言的结构化
+	- 有些嵌套查询可以用连接运算替代
+	- 外层查询（父查询）、内层查询（子查询）
+- 例：SELECT Sname FROM Student（外层查询/父查询）</br>&emsp;&emsp;WHERE Sno IN (SELECT Sno FROM SC WHERE Cno = '2');（内层查询/子查询）
+1. 带有`IN`谓词的子查询
+	在嵌套查询中，子查询的结果往往是个集合，用`IN`谓词表示父查询的条件在子查询结果的集合中
+	- 例：查询与“刘晨”在同一个系学习的学生
+		- 方法一：此查询可以分步来完成
+			- 第一步：确定“刘晨”所在系名
+				- 语句：SELECT Sdept FROM Student WHERE Sname = '刘晨'
+				- 结果为：CS
+			- 第二步：根据上一步的查询结果查询所有在CS系学习的学生
+				- 语句：SELECT Sno,Sname,Sdept</br>&emsp;&emsp;&emsp;FROM Student</br>&emsp;&emsp;&emsp;WHERE Sdept = 'CS'
+			- 从上述两步中可以看出，第二步中的CS是由第一步的查询得到的结果，因此第二步中的'CS'可以使用第一步的语句替代
+		- 方法二：将第一步查询嵌套到第二步查询的条件中
+			- 语句：SELECT Sno,Sname,Sdept</br>&emsp;&emsp;&emsp;FROM Student</br>&emsp;&emsp;&emsp;WHERE Sdept <font color = "CC6600">IN (SELECT Sdept FROM Student WHERE Sname = '刘晨')</font>;
+	- 说明
+		- 不相关子查询：子查询的查询条件不依赖于父查询
+		- 相关子查询：子查询的查询条件依赖于父查询，整个查询语句称为<font color = "CC6600">「嵌套查询」</font>
+2. 带有比较运算符的子查询
+	当能确切知道内层查询返回单值时，可用比较运算符（>，<，=，>=，<=，!=或<>）
+	- 例如：查询与“刘晨”在同一个系学习的
+		- 语句：SELECT Sno,Sname,Sdept</br>&emsp;&emsp;&emsp;FROM Student</br>&emsp;&emsp;&emsp;WHERE Sdept <font color = "CC6600">= (SELECT Sdept FROM Student WHERE Sname = '刘晨')</font>;
+	- 例如：找出每个学生超过他选修课程平均成绩的课程号
+		- 语句：SELECT Sno,Cno</br>&emsp;&emsp;&emsp;FROM SC x</br>&emsp;&emsp;&emsp;WHERE Grade >= (SELECT AVG(Grade) FROM SC y WHERE x.Sno = y.Sno);

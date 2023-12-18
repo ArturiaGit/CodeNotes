@@ -564,3 +564,143 @@ published: false
 
 =======
 >>>>>>> 3fe1d61f0f230cea44ef60bb494f6622016248d9
+
+
+>%%
+>```annotation-json
+>{"text":"为什么需要多个网卡的原因如下：\n- 隔离网络流量：在企业环境中，为了安全起见，通常会将<font color = \"CC6600\">「管理流量」</font>和<font color = \"CC6600\">「用户流量」</font>分开，通过使用多个网卡可以很好的实现这种隔离\n- 增强性能：多个网卡可以提供负载均衡，分散网络流量，避免单个网卡成为瓶颈，从而提供整体网络吞吐量\n- 冗余和容错：如果一张网卡失败，系统可以自动切换到另一张网卡，保证网络服务的可用性\n- 创建物理子网：在复杂的网络拓扑中，可能需要不同的服务或应用放置在不同的物理子网中，每个网卡可以连接到不同的子网\n- 服务质量控制：可以通过指定的网卡优先处理某些类型的流量，例如将VOIP流量与数据流量分离\n- 特定应用需求：某些应用程序或服务可能需要绑定特定的网络接口，多个网卡可以满足此类需求\n- 服务器可能需要在不同的网络上提供服务，每个网卡可以连接到不同的网络，使得服务器可以同时作为多个网络中的主机","target":[{"source":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","selector":[{"type":"TextPositionSelector","start":49735,"end":49816},{"type":"TextQuoteSelector","exact":"不过，因为某些特殊的需求，有时你可能还是需要增加额外的扩展卡的。举例来说，我们如果需要一部个人电脑连接多个网域时（Linux 服务器用途）， 恐怕就得要有多个网卡","prefix":"可以在主板上面发现很多方形的芯片，那通常是一些个别的设备芯片喔。","suffix":"。当你想要买网卡时，大卖场上面有好多耶！而且速度一样都是 gig"}]}],"created":"2023-12-15T02:57:10.703Z","updated":"2023-12-15T02:57:10.703Z","document":{"title":"鸟哥的 Linux 私房菜：基础学习篇 第四版","link":[{"href":"urn:x-pdf:32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},{"href":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf"}],"documentFingerprint":"32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},"uri":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf"}
+>```
+>%%
+>*%%PREFIX%%可以在主板上面发现很多方形的芯片，那通常是一些个别的设备芯片喔。%%HIGHLIGHT%% ==不过，因为某些特殊的需求，有时你可能还是需要增加额外的扩展卡的。举例来说，我们如果需要一部个人电脑连接多个网域时（Linux 服务器用途）， 恐怕就得要有多个网卡== %%POSTFIX%%。当你想要买网卡时，大卖场上面有好多耶！而且速度一样都是 gig*
+>%%LINK%%[[#^bltpxabugh4|show annotation]]
+>%%COMMENT%%
+>为什么需要多个网卡的原因如下：
+>- 隔离网络流量：在企业环境中，为了安全起见，通常会将<font color = "CC6600">「管理流量」</font>和<font color = "CC6600">「用户流量」</font>分开，通过使用多个网卡可以很好的实现这种隔离
+>- 增强性能：多个网卡可以提供负载均衡，分散网络流量，避免单个网卡成为瓶颈，从而提供整体网络吞吐量
+>- 冗余和容错：如果一张网卡失败，系统可以自动切换到另一张网卡，保证网络服务的可用性
+>- 创建物理子网：在复杂的网络拓扑中，可能需要不同的服务或应用放置在不同的物理子网中，每个网卡可以连接到不同的子网
+>- 服务质量控制：可以通过指定的网卡优先处理某些类型的流量，例如将VOIP流量与数据流量分离
+>- 特定应用需求：某些应用程序或服务可能需要绑定特定的网络接口，多个网卡可以满足此类需求
+>- 服务器可能需要在不同的网络上提供服务，每个网卡可以连接到不同的网络，使得服务器可以同时作为多个网络中的主机
+>%%TAGS%%
+>
+^bltpxabugh4
+
+
+>%%
+>```annotation-json
+>{"created":"2023-12-15T03:36:28.622Z","text":"换算过程如下：\n- 计算通道数量和传输率：DMI2.0通常以4通道（X4）操作，并提供4GT/S的传输速率\n- 计算总线的位宽：由于DMI是基于PCI Express的，每个通道在每个传输周期可以传输8位数据\n- 计算原始数据速率：4GT/s × 8 bits = 32Gbps\n- 应用8b/10b的编码开销：32Gbps * (8b/10b)=25.6Gbps的有效数据速率\n- 换算成字节：25.6 Gbps/8=3.2GB/s","updated":"2023-12-15T03:36:28.622Z","document":{"title":"鸟哥的 Linux 私房菜：基础学习篇 第四版","link":[{"href":"urn:x-pdf:32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},{"href":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf"}],"documentFingerprint":"32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},"uri":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","target":[{"source":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","selector":[{"type":"TextPositionSelector","start":51592,"end":51638},{"type":"TextQuoteSelector","exact":"DMI 2.0 的传输率是 4GT/s，换算成文件传输量时，大约仅有2GByte/s 的速度","prefix":"那条管道称为 DMI 2.0。根据 Intel 方面的数据来看，","suffix":"， 要知道，PCIe 2.0 x8 的理论速度已经达到 4GBy"}]}]}
+>```
+>%%
+>*%%PREFIX%%那条管道称为 DMI 2.0。根据 Intel 方面的数据来看，%%HIGHLIGHT%% ==DMI 2.0 的传输率是 4GT/s，换算成文件传输量时，大约仅有2GByte/s 的速度== %%POSTFIX%%， 要知道，PCIe 2.0 x8 的理论速度已经达到 4GBy*
+>%%LINK%%[[#^uhm39uomds|show annotation]]
+>%%COMMENT%%
+>换算过程如下：
+>- 计算通道数量和传输率：DMI2.0通常以4通道（X4）操作，并提供4GT/S的传输速率
+>- 计算总线的位宽：由于DMI是基于PCI Express的，每个通道在每个传输周期可以传输8位数据
+>- 计算原始数据速率：4GT/s × 8 bits = 32Gbps
+>- 应用8b/10b的编码开销：32Gbps * (8b/10b)=25.6Gbps的有效数据速率
+>- 换算成字节：25.6 Gbps/8=3.2GB/s
+>%%TAGS%%
+>
+^uhm39uomds
+
+
+
+
+>%%
+>```annotation-json
+>{"created":"2023-12-15T03:42:32.860Z","updated":"2023-12-15T03:42:32.860Z","document":{"title":"鸟哥的 Linux 私房菜：基础学习篇 第四版","link":[{"href":"urn:x-pdf:32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},{"href":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf"}],"documentFingerprint":"32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},"uri":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","target":[{"source":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","selector":[{"type":"TextPositionSelector","start":52279,"end":52490},{"type":"TextQuoteSelector","exact":"如果I/O位址想成是各设备的门牌号码的话，那么IRQ就可以想成是各个门牌连接到邮件中心（CPU）的专门路径啰！ 各设备可以通过IRQ中断信道来告知CPU该设备的工作情况，以方便CPU进行工作分配的任务。 老式的主板芯片组IRQ只有15个，如果你的周边接口太多时可能就会不够用， 这个时候你可以选择将一些没有用到的周边接口关掉，以空出一些IRQ来给真正需要使用的接口喔！ 当然，也有所谓的sharing IRQ的技术就是了！","prefix":"I/O位址之外，还有个IRQ中断（Interrupt）这个咚咚。","suffix":"鸟哥的 Linux 私房菜：基础学习篇 第四版580.2 个人电"}]}]}
+>```
+>%%
+>*%%PREFIX%%I/O位址之外，还有个IRQ中断（Interrupt）这个咚咚。%%HIGHLIGHT%% ==如果I/O位址想成是各设备的门牌号码的话，那么IRQ就可以想成是各个门牌连接到邮件中心（CPU）的专门路径啰！ 各设备可以通过IRQ中断信道来告知CPU该设备的工作情况，以方便CPU进行工作分配的任务。 老式的主板芯片组IRQ只有15个，如果你的周边接口太多时可能就会不够用， 这个时候你可以选择将一些没有用到的周边接口关掉，以空出一些IRQ来给真正需要使用的接口喔！ 当然，也有所谓的sharing IRQ的技术就是了！== %%POSTFIX%%鸟哥的 Linux 私房菜：基础学习篇 第四版580.2 个人电*
+>%%LINK%%[[#^bxkykw9ckbv|show annotation]]
+>%%COMMENT%%
+>
+>%%TAGS%%
+>
+^bxkykw9ckbv
+
+
+>%%
+>```annotation-json
+>{"created":"2023-12-15T03:43:57.575Z","updated":"2023-12-15T03:43:57.575Z","document":{"title":"鸟哥的 Linux 私房菜：基础学习篇 第四版","link":[{"href":"urn:x-pdf:32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},{"href":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf"}],"documentFingerprint":"32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},"uri":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","target":[{"source":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","selector":[{"type":"TextPositionSelector","start":52578,"end":52748},{"type":"TextQuoteSelector","exact":" CMOS主要的功能为记录主板上面的重要参数， 包括系统时间、CPU电压与频率、各项设备的I/O位址与IRQ等，由于这些数据的记录要花费电力，因此主板上面才有电池。 BIOS为写入到主板上某一块 flash 或 EEPROM 的程序，他可以在开机的时候执行，以载入CMOS当中的参数， 并尝试调用储存设备中的开机程序，进一步进入操作系统当中","prefix":"地方我们有提过CMOS与BIOS的功能，在这里我们再来强调一下：","suffix":"。BIOS程序也可以修改CMOS中的数据， 每种主板调用BIOS"}]}]}
+>```
+>%%
+>*%%PREFIX%%地方我们有提过CMOS与BIOS的功能，在这里我们再来强调一下：%%HIGHLIGHT%% ==CMOS主要的功能为记录主板上面的重要参数， 包括系统时间、CPU电压与频率、各项设备的I/O位址与IRQ等，由于这些数据的记录要花费电力，因此主板上面才有电池。 BIOS为写入到主板上某一块 flash 或 EEPROM 的程序，他可以在开机的时候执行，以载入CMOS当中的参数， 并尝试调用储存设备中的开机程序，进一步进入操作系统当中== %%POSTFIX%%。BIOS程序也可以修改CMOS中的数据， 每种主板调用BIOS*
+>%%LINK%%[[#^vaj72snwmm9|show annotation]]
+>%%COMMENT%%
+>
+>%%TAGS%%
+>
+^vaj72snwmm9
+
+
+>%%
+>```annotation-json
+>{"created":"2023-12-15T09:13:39.962Z","updated":"2023-12-15T09:13:39.962Z","document":{"title":"鸟哥的 Linux 私房菜：基础学习篇 第四版","link":[{"href":"urn:x-pdf:32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},{"href":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf"}],"documentFingerprint":"32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},"uri":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","target":[{"source":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","selector":[{"type":"TextPositionSelector","start":57221,"end":57249},{"type":"TextQuoteSelector","exact":"电脑系统将软件分为两大类，一个是系统软件，一个是应用程序","prefix":"魂啰！所以下面咱们就得要了解一下“软件”是什么。一般来说，目前的","suffix":"。但鸟哥认为我们还是得要了解一下什么是程序， 尤其是机器程序，了"}]}]}
+>```
+>%%
+>*%%PREFIX%%魂啰！所以下面咱们就得要了解一下“软件”是什么。一般来说，目前的%%HIGHLIGHT%% ==电脑系统将软件分为两大类，一个是系统软件，一个是应用程序== %%POSTFIX%%。但鸟哥认为我们还是得要了解一下什么是程序， 尤其是机器程序，了*
+>%%LINK%%[[#^iztv1y6v4vq|show annotation]]
+>%%COMMENT%%
+>
+>%%TAGS%%
+>
+^iztv1y6v4vq
+
+
+>%%
+>```annotation-json
+>{"created":"2023-12-15T10:35:27.162Z","updated":"2023-12-15T10:35:27.162Z","document":{"title":"鸟哥的 Linux 私房菜：基础学习篇 第四版","link":[{"href":"urn:x-pdf:32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},{"href":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf"}],"documentFingerprint":"32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},"uri":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","target":[{"source":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","selector":[{"type":"TextPositionSelector","start":61527,"end":61653},{"type":"TextQuoteSelector","exact":"由上图我们可以得到几个小重点：操作系统必须要能够驱动硬件，如此应用程序才能够使用该硬件功能；一般来说，操作系统会提供开发接口，让开发商制作他们的驱动程序；要使用新硬件功能，必须要安装厂商提供的驱动程序才行；驱动程序是由厂商提供的，与操作系统开发者无关。","prefix":"版680.4 软件程序运行图0.4.3、驱动程序与操作系统的关系","suffix":"所以，如果你想要在某个操作系统上面安装一张新的显卡，那么请要求该"}]}]}
+>```
+>%%
+>*%%PREFIX%%版680.4 软件程序运行图0.4.3、驱动程序与操作系统的关系%%HIGHLIGHT%% ==由上图我们可以得到几个小重点：操作系统必须要能够驱动硬件，如此应用程序才能够使用该硬件功能；一般来说，操作系统会提供开发接口，让开发商制作他们的驱动程序；要使用新硬件功能，必须要安装厂商提供的驱动程序才行；驱动程序是由厂商提供的，与操作系统开发者无关。== %%POSTFIX%%所以，如果你想要在某个操作系统上面安装一张新的显卡，那么请要求该*
+>%%LINK%%[[#^7nzgq6nkm8m|show annotation]]
+>%%COMMENT%%
+>
+>%%TAGS%%
+>
+^7nzgq6nkm8m
+
+
+>%%
+>```annotation-json
+>{"created":"2023-12-15T10:52:50.861Z","text":"答：Linux是一套操作系统（所谓的操作系统其实就是系统软件，它主要的功能是用来调度系统资源，对资源进行合理的分配）","updated":"2023-12-15T10:52:50.861Z","document":{"title":"鸟哥的 Linux 私房菜：基础学习篇 第四版","link":[{"href":"urn:x-pdf:32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},{"href":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf"}],"documentFingerprint":"32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},"uri":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","target":[{"source":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","selector":[{"type":"TextPositionSelector","start":67357,"end":67365},{"type":"TextQuoteSelector","exact":"Linux是什么","prefix":"， 为什么复制软件不会违法时，你会答不出来啊！^_^1.1.1 ","suffix":"？操作系统/应用程序？我们在第零章、计算机概论里面有提到过整个计"}]}]}
+>```
+>%%
+>*%%PREFIX%%， 为什么复制软件不会违法时，你会答不出来啊！^_^1.1.1%%HIGHLIGHT%% ==Linux是什么== %%POSTFIX%%？操作系统/应用程序？我们在第零章、计算机概论里面有提到过整个计*
+>%%LINK%%[[#^hh5ley115bb|show annotation]]
+>%%COMMENT%%
+>答：Linux是一套操作系统（所谓的操作系统其实就是系统软件，它主要的功能是用来调度系统资源，对资源进行合理的分配）
+>%%TAGS%%
+>
+^hh5ley115bb
+
+
+>%%
+>```annotation-json
+>{"created":"2023-12-15T11:18:28.102Z","text":"这里的“386”指的是英特尔80386处理器，又称为i386，是一款在1985年推出的32位微处理器。80386是英特尔第一个完全32位的x86架构处理器，相对于前一代的16位处理器（如80286），它能够提供更好的性能、更大的内存地址空间和更强的多任务处理能力","updated":"2023-12-15T11:18:28.102Z","document":{"title":"鸟哥的 Linux 私房菜：基础学习篇 第四版","link":[{"href":"urn:x-pdf:32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},{"href":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf"}],"documentFingerprint":"32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},"uri":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","target":[{"source":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","selector":[{"type":"TextPositionSelector","start":67682,"end":67700},{"type":"TextQuoteSelector","exact":"早期的Linux是针对386来开发的","prefix":"作系统的角色由上图中我们可以看到其实核心与硬件的关系非常的强烈。","suffix":"， 由于Linux只是一套操作系统并不含有其他的应用程序，因此很"}]}]}
+>```
+>%%
+>*%%PREFIX%%作系统的角色由上图中我们可以看到其实核心与硬件的关系非常的强烈。%%HIGHLIGHT%% ==早期的Linux是针对386来开发的== %%POSTFIX%%， 由于Linux只是一套操作系统并不含有其他的应用程序，因此很*
+>%%LINK%%[[#^7v0xsib2u0v|show annotation]]
+>%%COMMENT%%
+>这里的“386”指的是英特尔80386处理器，又称为i386，是一款在1985年推出的32位微处理器。80386是英特尔第一个完全32位的x86架构处理器，相对于前一代的16位处理器（如80286），它能够提供更好的性能、更大的内存地址空间和更强的多任务处理能力
+>%%TAGS%%
+>
+^7v0xsib2u0v
+
+
+>%%
+>```annotation-json
+>{"created":"2023-12-15T11:35:02.744Z","updated":"2023-12-15T11:35:02.744Z","document":{"title":"鸟哥的 Linux 私房菜：基础学习篇 第四版","link":[{"href":"urn:x-pdf:32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},{"href":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf"}],"documentFingerprint":"32316337376365333231623730653138363839316632333061373439303730333237363134386261343866333035653730666630656634616430323336633165"},"uri":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","target":[{"source":"vault:/blog/source/_posts/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84 Linux %E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87 %E7%AC%AC%E5%9B%9B%E7%89%88.pdf","selector":[{"type":"TextPositionSelector","start":68705,"end":68719},{"type":"TextQuoteSelector","exact":"Linux是具有“可移植性”","prefix":"所以他的程序码可以被修改成适合在各种机器上面运行的， 也就是说，","suffix":"，这可是很重要的一个功能喔！ ^_^Linux提供了一个完整的操"}]}]}
+>```
+>%%
+>*%%PREFIX%%所以他的程序码可以被修改成适合在各种机器上面运行的， 也就是说，%%HIGHLIGHT%% ==Linux是具有“可移植性”== %%POSTFIX%%，这可是很重要的一个功能喔！ ^_^Linux提供了一个完整的操*
+>%%LINK%%[[#^pbnr3sa6ssk|show annotation]]
+>%%COMMENT%%
+>
+>%%TAGS%%
+>
+^pbnr3sa6ssk
