@@ -279,3 +279,35 @@ published: false
 		- 语句：SELECT Sno,Sname,Sdept</br>&emsp;&emsp;&emsp;FROM Student</br>&emsp;&emsp;&emsp;WHERE Sdept <font color = "CC6600">= (SELECT Sdept FROM Student WHERE Sname = '刘晨')</font>;
 	- 例如：找出每个学生超过他选修课程平均成绩的课程号
 		- 语句：SELECT Sno,Cno</br>&emsp;&emsp;&emsp;FROM SC x</br>&emsp;&emsp;&emsp;WHERE Grade >= (SELECT AVG(Grade) FROM SC y WHERE x.Sno = y.Sno);
+3. 带有`ANY(SOME)`或`ALL`谓词的子查询
+	- 谓词语义：
+		- ANY：任意一个值
+		- ALL：所有值
+	- 在使用`ANY`或`ALL`的时候需要配合比较运算符一起使用：
+		- ![773a3cb976fe1e35c1830b0b349b5d21.png](https://arturia-blog-1316646580.cos.ap-shanghai.myqcloud.com/ArturiaBlogPicGo/202401061555356.png)
+		- ![image.png](https://arturia-blog-1316646580.cos.ap-shanghai.myqcloud.com/ArturiaBlogPicGo/202401061555122.png)
+	- 例：查询非计算机科学系中比计算机科学任意一个学生年龄小的学生姓名和年龄
+		- 语句：SELECT Sname,Sage</br>&emsp;&emsp;&emsp;FROM Student</br>&emsp;&emsp;&emsp;WHERE Sage \<ANY (SELECT Sage FROM Student WHERE Sdept = 'CS')</br>&emsp;&emsp;&emsp;AND Sdept != 'CS';
+	- 例：查询非计算机科学系中比计算机科学系所有学生年龄都小的学生姓名及年龄(使用`ALL`谓词)
+		- 语句：SELECT Sname,Sage</br>&emsp;&emsp;&emsp;FROM Student</br>&emsp;&emsp;&emsp;WHERE Sage \<ALL (SELECT Sage FROM Student WHERE Sdept = 'CS')</br>&emsp;&emsp;&emsp;AND sdept != 'CS';
+	- 说明：<font color = "BA8448">【用聚集函数实现子查询要比直接用ANY、ALL效率更高。】</font>
+4. 带有`EXISTS`谓词的子查询
+	- EXISTS谓词：EXISTS谓词代表存在量词∃，带有EXISTS谓词的子查询只返回逻辑真(True)或逻辑假(False)
+	- 例：查询所有选修了1号课程的学生姓名
+		- 思路分析：
+			- 本查询涉及Student和SC关系
+			- 在student中依次取每个Sno值，用此值取检查SC关系
+			- 若SC中存在这样的元组，其Sno值等于此Student.Sno且Cno='1'，则取此Student.Sname送入结果关系中
+		- 使用连接查询：
+			- 语句：SELECT s1.Sname</br>&emsp;&emsp;&emsp;FROM Student AS s1,SC AS s2</br>&emsp;&emsp;&emsp;WHERE s1.Sno = s2.Sno AND s2.Cno = '1';
+		- 使用嵌套查询：
+			- 语句：SELECT Sname</br>&emsp;&emsp;&emsp;FROM Student</br>&emsp;&emsp;&emsp;WHERE EXISTS (SELECT \* FROM SC WHERE Sno = Student.Sno AND Cno = '1')
+		- 说明：
+			- 使用存在量词EXISTS后，若内层查询结果为空，则外层的WHERE子句返回真值；否则返回假值
+			- 由EXISTS引出的子查询目标列都用\*，因为带EXISTS的子查询只返回真值或假值，给出列名无实际意义
+5. `NOT EXISTS`谓词
+	- 说明：
+		- 若内层查询结果为非空，则外层的WHERE子句返回假值（查询到结果返回False）
+		- 若内层查询结果为空，则外层的WHERE子句返回真值（没有查询到结果返回True）
+	- 例：查询没有选修1号课程的学生姓名
+		- 语句：SELECT Sname</br>&emsp;&emsp;&emsp;FROM Student</br>&emsp;&emsp;&emsp;WHERE NOT EXISTS (SELECT * FROM SC WHERE Sno = Student.Sno AND Cno = '1');
